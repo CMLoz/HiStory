@@ -1,0 +1,92 @@
+[
+  {
+    "speakerName": "",
+    "text": "...",
+    "bgImage": "assets/bg/ph_docks.jpg"
+  },
+  {
+    "speakerName": "NPC: Paciano Rizal",
+    "text": "Pepe, the ship awaits. Once you step aboard, the path back will vanish. You leave behind not only your family but the familiar shores of our homeland.",
+    "bgImage": "assets/bg/ph_docks.jpg"
+  },
+  {
+    "speakerName": "NPC: Paciano Rizal",
+    "text": "The world beyond is uncertain and perilous, especially for one with your purpose.",
+    "bgImage": "assets/bg/ph_docks.jpg"
+  },
+  {
+    "speakerName": "PLAYER: José Rizal",
+    "text": "I know, Kuya. I have wrestled with this choice many nights. But remaining here, under the shadow of oppression and ignorance, is a greater danger.",
+    "bgImage": "assets/bg/ph_docks.jpg"
+  },
+  {
+    "speakerName": "PLAYER: José Rizal",
+    "text": "If I stay, I am blind. If I leave, I might learn how to open the eyes of others.",
+    "bgImage": "assets/bg/ph_docks.jpg"
+  },
+  {
+    "speakerName": "NPC: Paciano Rizal",
+    "text": "You carry the burden of our people's hopes. Knowledge is a weapon, but also a heavy cross.",
+    "bgImage": "assets/bg/ph_docks.jpg"
+  },
+  {
+    "speakerName": "NPC: Paciano Rizal",
+    "text": "Europe will test your spirit as much as your mind. Be wary, Pepe. Courage alone will not shield you.",
+    "bgImage": "assets/bg/ph_docks.jpg"
+  },
+  {
+    "speakerName": "PLAYER: José Rizal",
+    "text": "I do not seek glory or safety. I go to learn, to prepare, to return with truths that cannot be silenced.",
+    "bgImage": "assets/bg/ph_docks.jpg"
+  },
+  {
+    "speakerName": "PLAYER: José Rizal",
+    "text": "For the Philippines, every sacrifice is worth it.",
+    "bgImage": "assets/bg/ph_docks.jpg"
+  },
+  {
+    "speakerName": " ",
+    "text": "(Paciano nods solemnly. The ship's bell tolls in the distance.)",
+    "bgImage": "assets/bg/ph_docks.jpg"
+  },
+  {
+    "speakerName": "",
+    "text": "",
+    "bgImage": "assets/bg/ph_docks.jpg",
+    "choices": [
+      {
+        "text": "Board the ship.",
+        "nextIndex": 11
+      },
+      {
+        "text": "Stay in the Philippines.",
+        "nextIndex": 16
+      }
+    ]
+  },
+  {
+    "speakerName": "PLAYER: José Rizal",
+    "text": "(internal monologue, contemplative) “This city breathes freedom—words flow like rivers, unrestrained. Here, criticism is not met with chains but with discussion. Yet, my countrymen remain shackled by silence, their voices crushed by fear and law.",
+    "bgImage": "assets/bg/spain_arrival.jpg"
+  },
+  {
+    "speakerName": "NPC: Graciano López Jaena",
+    "text": "You must be José Rizal. Your writings precede you—a beacon for Filipinos yearning for justice.",
+    "bgImage": "assets/bg/spain_arrival.jpg"
+  },
+  {
+    "speakerName": "PLAYER: José Rizal",
+    "text": "Señor López Jaena, your speeches have stirred many hearts, including mine. It is an honor to meet the man whose voice carries the pain and hope of our people.",
+    "bgImage": "assets/bg/spain_arrival.jpg"
+  },
+  {
+    "speakerName": "NPC: Graciano López Jaena",
+    "text": "Here, we have the liberty to speak, but our brethren in the islands suffer in silence. Our words must cross oceans and walls to awaken both the oppressors and the oppressed.",
+    "bgImage": "assets/bg/spain_arrival.jpg"
+  },
+  {
+    "speakerName": "PLAYER: José Rizal",
+    "text": "Then I shall wield my pen as a sword—not to fight with blood, but to cut through lies and ignorance. Our homeland’s truth must be known.",
+    "bgImage": "assets/bg/spain_arrival.jpg"
+  }
+]

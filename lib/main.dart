@@ -1,65 +1,89 @@
+import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:history/ui/screens/main_menu_screen.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Set orientation to landscape
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
+  ]);
+
+  // Preload audio files so they decode immediately
+  await FlameAudio.audioCache.loadAll([
+    'main-theme.mp3',
+    'button-click.mp3',
+  ]);
+
+  runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerStatefulWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  @override
+  ConsumerState<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends ConsumerState<MyApp> {
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Precache shared background and main menu buttons
+    precacheImage(
+      const AssetImage('assets/images/pixel_art_large.png'),
+      context,
+    );
+    precacheImage(
+      const AssetImage('assets/images/Play Button.png'),
+      context,
+    );
+    precacheImage(
+      const AssetImage('assets/images/Options Button.png'),
+      context,
+    );
+    precacheImage(
+      const AssetImage('assets/images/Quit Button.png'),
+      context,
+    );
+    
+    // Precache character select screen assets
+    precacheImage(
+      const AssetImage('assets/images/Back Square Button.png'),
+      context,
+    );
+    precacheImage(
+      const AssetImage('assets/images/rizal_nameplate.png'),
+      context,
+    );
+    precacheImage(
+      const AssetImage('assets/images/boni_nameplate.png'),
+      context,
+    );
+    precacheImage(
+      const AssetImage('assets/images/luna_nameplate.png'),
+      context,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: .center,
-          children: [
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+      title: 'HiStory Visual Novel',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        // Enhance visual novel feel
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+          brightness: Brightness.dark, // Often preferred for VN/Games
         ),
+        useMaterial3: true,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      home: const MainMenuScreen(),
     );
   }
 }
