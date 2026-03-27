@@ -102,8 +102,14 @@ class CurrentChapterNotifier extends Notifier<String> {
       state = 'chapter2';
     } else if (state == 'chapter2') {
       state = 'chapter3';
+    } else if (state == 'chapter3') {
+      state = 'chapter4';
     }
     // Extend logic for future chapters
+  }
+
+  void reset() {
+    state = 'chapter1';
   }
 }
 

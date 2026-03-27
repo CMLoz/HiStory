@@ -141,6 +141,57 @@
           "bgImage": "assets/bg/shadow_spain.png"
         }
       ]
+    },
+    {
+      "id": "scene_critical_decision",
+      "name": "Critical Decision: Rizal’s Role",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Caught between his ideals and the risks they bring, Rizal faces a defining moment. The path he chooses will shape not only his future—but the future of the reform movement.",
+          "bgImage": "assets/bg/dormroom.png"
+        },
+        {
+          "speakerName": "PLAYER: José Rizal",
+          "text": "(internal monologue) My words have power… but they also carry consequences. What is the best way to serve my country?",
+          "bgImage": "assets/bg/dormroom.png"
+        },
+        {
+          "speakerName": "",
+          "text": "",
+          "bgImage": "assets/bg/dormroom.png",
+          "choices": [
+            {
+              "text": "Continue leading the reform movement through writing and publications.",
+              "nextIndex": 25
+            },
+            {
+              "text": "Distance myself from political leadership and focus on education and personal works.",
+              "nextIndex": 25
+            },
+            {
+              "text": "Return to the Philippines to witness conditions firsthand.",
+              "nextIndex": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene_reflection",
+      "name": "Reflection",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "In a time of oppression, ideas become instruments of change. Rizal’s writings ignite awareness, planting the seeds of national identity among Filipinos.",
+          "bgImage": "assets/bg/rizal_booksarticles.png"
+        },
+        {
+          "speakerName": "PLAYER: José Rizal",
+          "text": "(internal monologue) The struggle for reform is far from over. But as long as minds continue to awaken, there is hope for the future.",
+          "bgImage": "assets/bg/rizal_booksarticles.png"
+        }
+      ]
     }
   ]
 }

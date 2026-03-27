@@ -1,0 +1,184 @@
+{
+  "chapterId": "rizal_chapter4",
+  "title": "A Darker Vision",
+  "scenes": [
+    {
+      "id": "scene_rizal_study_1891",
+      "name": "Rizal’s Study, Europe (1891)",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Years after the publication of his first novel, Rizal once again takes up his pen. But this time, his vision has changed. The hope that once filled his writings is now shadowed by frustration and urgency.",
+          "bgImage": "assets/bg/rizal_darker_room.png"
+        },
+        {
+          "speakerName": "PLAYER: José Rizal",
+          "text": "(writing aloud): If injustice continues unchecked, it will not end in peace… but in destruction. A society pushed too far will inevitably resist.",
+          "bgImage": "assets/bg/rizal_darker_room.png"
+        },
+        {
+          "speakerName": "NARRATOR",
+          "text": "This new work reflects a deeper understanding of oppression—one that acknowledges the dangerous consequences of prolonged abuse.",
+          "bgImage": "assets/bg/rizal_darker_room.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_blumentritt_discussion",
+      "name": "Discussion with Blumentritt",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "As Rizal develops his new novel, he once again confides in his trusted friend, Ferdinand Blumentritt.",
+          "bgImage": "assets/bg/rizal_bluementritt.png"
+        },
+        {
+          "speakerName": "PLAYER: José Rizal",
+          "text": "(writing aloud): My friend, this novel is unlike my previous work. It is darker—more direct in its warning. I fear that if reforms are ignored, the future may be filled with conflict.",
+          "bgImage": "assets/bg/rizal_bluementritt.png"
+        },
+        {
+          "speakerName": " ",
+          "text": "(Blumentritt is seen reading Rizal's letter.)",
+          "bgImage": "assets/bg/rizal_bluementritt.png"
+        },
+        {
+          "speakerName": "NPC: Ferdinand Blumentritt",
+          "text": "You speak of consequences that many refuse to acknowledge. Your message is clear—but it may be misunderstood by those who fear it.",
+          "bgImage": "assets/bg/rizal_bluementritt.png"
+        },
+        {
+          "speakerName": "NPC: Ferdinand Blumentritt",
+          "text": "(writing): Take care, Rizal. A warning, if misinterpreted, can be seen as a call to action.",
+          "bgImage": "assets/bg/rizal_bluementritt.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_elfili_publication",
+      "name": "Publication of the Novel",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "In 1891, Rizal publishes his second novel, El Filibusterismo. Unlike Noli Me Tángere, this work carries a darker tone—reflecting the growing tension between reform and resistance.",
+          "bgImage": "assets/bg/busier_printing.png"
+        },
+        {
+          "speakerName": "NPC: Mariano Ponce",
+          "text": "This… is far more intense than your first novel. It does not simply reveal injustice—it shows what may happen if it continues.",
+          "bgImage": "assets/bg/busier_printing.png"
+        },
+        {
+          "speakerName": "PLAYER: José Rizal",
+          "text": "That is precisely its purpose. It is not meant to encourage violence, but to warn against the consequences of ignoring reform. If change does not come, anger will take its place.",
+          "bgImage": "assets/bg/busier_printing.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_reformists_reaction",
+      "name": "Reformists’ Reaction",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "The novel spreads quickly among Filipinos, strengthening nationalist ideas—but also raising concerns among reformists.",
+          "bgImage": "assets/bg/tension_reformists.png"
+        },
+        {
+          "speakerName": "NPC: Marcelo H. del Pilar",
+          "text": "Your message is powerful, Rizal—but also dangerous. Some may interpret it as justification for rebellion.",
+          "bgImage": "assets/bg/tension_reformists.png"
+        },
+        {
+          "speakerName": "NPC: Mariano Ponce",
+          "text": "Yet it speaks a truth we cannot ignore. The people grow restless. Their patience has limits.",
+          "bgImage": "assets/bg/tension_reformists.png"
+        },
+        {
+          "speakerName": "PLAYER: José Rizal",
+          "text": "I do not advocate violence. I seek to prevent it. If those in power understand the consequences of their actions, perhaps they will finally listen.",
+          "bgImage": "assets/bg/tension_reformists.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_authorities_reaction",
+      "name": "Reaction of Spanish Authorities",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Spanish authorities, however, see the novel differently. To them, Rizal’s words are no longer just criticism—they are a threat.",
+          "bgImage": "assets/bg/shadow_spain.png"
+        },
+        {
+          "speakerName": "NPC: Spanish Official",
+          "text": "(voice-over): This book is dangerous. It spreads ideas that could incite rebellion among the natives.",
+          "bgImage": "assets/bg/shadow_spain.png"
+        },
+        {
+          "speakerName": "NPC: Another Official",
+          "text": "Rizal must be watched closely. His influence is growing beyond control.",
+          "bgImage": "assets/bg/shadow_spain.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_weight_of_influence",
+      "name": "The Weight of Influence",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "As his ideas spread, Rizal faces the reality of his growing influence. His words inspire hope—but also fear, both among the people and the authorities.",
+          "bgImage": "assets/bg/rizal_elfili_alone.png"
+        },
+        {
+          "speakerName": "PLAYER: José Rizal",
+          "text": "(internal monologue): My intention was to warn, not to provoke. Yet the line between the two grows thinner with each passing day. If my words awaken the people… what path will they choose?",
+          "bgImage": "assets/bg/rizal_elfili_alone.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_interpretation_message",
+      "name": "Interpretation of the Message",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "The meaning of Rizal’s work now lies not only in what he has written—but in how it is understood by those who read it.",
+          "bgImage": "assets/bg/dim_crossroads.jpeg"
+        },
+        {
+          "speakerName": "",
+          "text": "",
+          "bgImage": "assets/bg/dim_crossroads.jpeg",
+          "choices": [
+            {
+              "text": "Emphasize that the novel is a warning to prevent revolution.",
+              "nextIndex": 23
+            },
+            {
+              "text": "Distance from the novel’s more radical implications.",
+              "nextIndex": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene_final_reflection",
+      "name": "Final Reflection",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "With El Filibusterismo, Rizal deepens the conversation about justice, reform, and the consequences of oppression. His ideas continue to spread, shaping the thoughts of a nation on the brink of change.",
+          "bgImage": "assets/bg/rizal_overlooking.png"
+        },
+        {
+          "speakerName": "PLAYER: José Rizal",
+          "text": "(internal monologue): If injustice continues, the future will not be decided by words alone… but by the actions of those who have awakened.",
+          "bgImage": "assets/bg/rizal_overlooking.png"
+        }
+      ]
+    }
+  ]
+}

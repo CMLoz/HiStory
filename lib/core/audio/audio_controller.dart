@@ -67,6 +67,14 @@ class AudioController extends Notifier<AudioSettings> {
     }
   }
 
+  Future<void> preloadSfx(List<String> filenames) async {
+    await FlameAudio.audioCache.loadAll(filenames);
+  }
+
+  Future<void> preloadBgm(List<String> filenames) async {
+    await FlameAudio.audioCache.loadAll(filenames);
+  }
+
   void startBgm() {
     if (state.isBgmEnabled) {
       FlameAudio.bgm.play('main-theme.mp3', volume: state.bgmVolume);

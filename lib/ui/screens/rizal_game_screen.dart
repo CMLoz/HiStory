@@ -8,6 +8,7 @@ import 'package:history/ui/widgets/typewriter_text.dart';
 import 'package:history/ui/screens/main_menu_screen.dart';
 import 'package:history/ui/screens/options_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:history/core/audio/audio_controller.dart';
 
 class RizalGameScreen extends ConsumerStatefulWidget {
   const RizalGameScreen({super.key});
@@ -45,7 +46,8 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
   }
 
   Future<void> _preloadStaticAssets() async {
-    await Future.wait([
+    final audioController = ref.read(audioControllerProvider.notifier);
+    await Future.wait<void>([
       precacheImage(
         const AssetImage('assets/images/dialogue_box.png'),
         context,
@@ -54,6 +56,7 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
         const AssetImage('assets/images/Pause Square Button.png'),
         context,
       ),
+      audioController.preloadSfx(['button-click.mp3']),
     ]);
   }
 
@@ -225,50 +228,9 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
 
           // --- CHAPTER TITLE SCREEN ---
           if (_showChapterTitle) {
-            final String chapterId = ref.read(currentChapterProvider);
-            final String chapterLabel = chapterId.replaceAll('chapter', 'CHAPTER ');
-            
-            return Container(
-              color: Colors.black,
-              width: double.infinity,
-              height: double.infinity,
-              child: Center(
-                child: AnimatedOpacity(
-                  opacity: _titleOpacity,
-                  duration: const Duration(seconds: 2),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        chapterLabel.toUpperCase(),
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.cinzelDecorative(
-                          fontSize: 42,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.amber,
-                          letterSpacing: 8.0,
-                          shadows: [
-                            const Shadow(
-                              color: Colors.amber,
-                              blurRadius: 20,
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 24),
-                      Text(
-                        chapter.title.toUpperCase(),
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.cinzel(
-                          fontSize: 20,
-                          color: Colors.white70,
-                          letterSpacing: 4.0,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+            return _ChapterTitleScreen(
+              chapter: chapter,
+              opacity: _titleOpacity,
             );
           }
 
@@ -319,11 +281,13 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
                 children: [
                   // Background Image
                   Positioned.fill(
-                    child: Image.asset(
-                      currentNode.bgImage,
-                      key: ValueKey<String>(currentNode.bgImage),
-                      fit: BoxFit.cover,
-                      gaplessPlayback: true,
+                    child: RepaintBoundary(
+                      child: Image.asset(
+                        currentNode.bgImage,
+                        key: ValueKey<String>(currentNode.bgImage),
+                        fit: BoxFit.cover,
+                        gaplessPlayback: true,
+                      ),
                     ),
                   ),
 
@@ -348,71 +312,10 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
                     )
                   // — NORMAL DIALOGUE BOX —
                   else
-                    Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Padding(
-                        padding: const EdgeInsets.only(bottom: 16.0),
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            Image.asset(
-                              'assets/images/dialogue_box.png',
-                              width: MediaQuery.of(context).size.width * 0.95,
-                              height: 200,
-                              fit: BoxFit.fill,
-                            ),
-                            Positioned(
-                              top: 40,
-                              left: 70,
-                              right: 100,
-                              bottom: 40,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  if (currentNode.speakerName.isNotEmpty)
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                        bottom: 8.0,
-                                      ),
-                                      child: Text(
-                                        currentNode.speakerName,
-                                        style: GameTheme.headingStyle.copyWith(
-                                          fontSize: 18,
-                                          color: Colors.amber,
-                                          shadows: [
-                                            const Shadow(
-                                              color: Colors.black,
-                                              offset: Offset(2, 2),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  Expanded(
-                                    child: TypewriterText(
-                                      currentNode.text,
-                                      key: _typewriterKey,
-                                      speed: Duration(
-                                        milliseconds: textSpeedMs,
-                                      ),
-                                      style: GameTheme.bodyStyle.copyWith(
-                                        fontSize: 15,
-                                        color: Colors.white,
-                                        shadows: [
-                                          const Shadow(
-                                            color: Colors.black,
-                                            offset: Offset(1, 1),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                    _DialogueBox(
+                      currentNode: currentNode,
+                      typewriterKey: _typewriterKey,
+                      textSpeedMs: textSpeedMs,
                     ),
 
                   // Pause Button
@@ -491,6 +394,38 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
                                 },
                               ),
                               const SizedBox(width: 40),
+                              // --- RESET BUTTON ---
+                              Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  AudioImageButton(
+                                    assetPath:
+                                        'assets/images/Home Square Button.png',
+                                    width: 80,
+                                    onPressed: () {
+                                      // Reset both chapter and dialogue index
+                                      ref
+                                          .read(currentChapterProvider.notifier)
+                                          .reset();
+                                      ref
+                                          .read(gameStateProvider.notifier)
+                                          .reset();
+                                      setState(() {
+                                        _isPaused = false;
+                                      });
+                                    },
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    'RESET',
+                                    style: GameTheme.bodyStyle.copyWith(
+                                      fontSize: 10,
+                                      color: Colors.white70,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(width: 40),
                               AudioImageButton(
                                 assetPath:
                                     'assets/images/Back Square Button.png',
@@ -515,6 +450,145 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
     );
   }
 }
+
+/// Intro screen shown at the start of each chapter.
+class _ChapterTitleScreen extends ConsumerWidget {
+  final Chapter chapter;
+  final double opacity;
+
+  const _ChapterTitleScreen({required this.chapter, required this.opacity});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final String chapterId = ref.watch(currentChapterProvider);
+    final String chapterLabel = chapterId.replaceAll('chapter', 'CHAPTER ');
+
+    return Container(
+      color: Colors.black,
+      width: double.infinity,
+      height: double.infinity,
+      child: Center(
+        child: AnimatedOpacity(
+          opacity: opacity,
+          duration: const Duration(seconds: 2),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                chapterLabel.toUpperCase(),
+                textAlign: TextAlign.center,
+                style: GoogleFonts.cinzelDecorative(
+                  fontSize: 42,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.amber,
+                  letterSpacing: 8.0,
+                  shadows: [
+                    const Shadow(
+                      color: Colors.amber,
+                      blurRadius: 20,
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 24),
+              Text(
+                chapter.title.toUpperCase(),
+                textAlign: TextAlign.center,
+                style: GoogleFonts.cinzel(
+                  fontSize: 20,
+                  color: Colors.white70,
+                  letterSpacing: 4.0,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// The standard dialogue box at the bottom of the screen.
+class _DialogueBox extends StatelessWidget {
+  final DialogueNode currentNode;
+  final GlobalKey<TypewriterTextState>? typewriterKey;
+  final int textSpeedMs;
+
+  const _DialogueBox({
+    required this.currentNode,
+    required this.typewriterKey,
+    required this.textSpeedMs,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 16.0),
+        child: RepaintBoundary(
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Image.asset(
+                'assets/images/dialogue_box.png',
+                width: MediaQuery.of(context).size.width * 0.95,
+                height: 200,
+                fit: BoxFit.fill,
+              ),
+              Positioned(
+                top: 40,
+                left: 70,
+                right: 100,
+                bottom: 40,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (currentNode.speakerName.isNotEmpty)
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0),
+                        child: Text(
+                          currentNode.speakerName,
+                          style: GameTheme.headingStyle.copyWith(
+                            fontSize: 18,
+                            color: Colors.amber,
+                            shadows: [
+                              const Shadow(
+                                color: Colors.black,
+                                offset: Offset(2, 2),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    Expanded(
+                      child: TypewriterText(
+                        currentNode.text,
+                        key: typewriterKey,
+                        speed: Duration(milliseconds: textSpeedMs),
+                        style: GameTheme.bodyStyle.copyWith(
+                          fontSize: 15,
+                          color: Colors.white,
+                          shadows: [
+                            const Shadow(
+                              color: Colors.black,
+                              offset: Offset(1, 1),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 
 /// A single interactive choice box, reusing the dialogue_box asset.
 class _ChoiceBox extends StatefulWidget {

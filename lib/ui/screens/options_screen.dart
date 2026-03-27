@@ -95,11 +95,13 @@ class OptionsScreen extends ConsumerWidget {
                       ],
                     ),
                     Slider(
-                      value: textSpeedMs.toDouble(),
+                      value: (70 - textSpeedMs).toDouble(),
                       min: 10,
                       max: 60,
-                      // Invert: dragging right = faster (lower ms)
-                      onChanged: (value) => textSpeedNotifier.setSpeed((70 - value).round()),
+                      // Left (10) = 70-10 = 60ms (Slow)
+                      // Right (60) = 70-60 = 10ms (Fast)
+                      onChanged: (value) =>
+                          textSpeedNotifier.setSpeed((70 - value).round()),
                       activeColor: Colors.amber,
                       inactiveColor: Colors.white24,
                     ),
