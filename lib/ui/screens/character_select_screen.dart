@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:history/ui/screens/chapter_title_screen.dart';
 import 'package:history/ui/screens/rizal_game_screen.dart';
 import 'package:history/ui/theme/game_theme.dart';
 import 'package:history/ui/widgets/audio_image_button.dart';
@@ -54,11 +53,7 @@ class CharacterSelectScreen extends StatelessWidget {
                         Navigator.of(context).push(
                           PageRouteBuilder(
                             transitionDuration: const Duration(seconds: 2),
-                            pageBuilder: (context, animation, secondaryAnimation) => const ChapterTitleScreen(
-                              chapterTitle: 'Chapter 1',
-                              subtitle: 'The Departure',
-                              nextScreen: RizalGameScreen(),
-                            ),
+                            pageBuilder: (context, animation, secondaryAnimation) => const RizalGameScreen(),
                             transitionsBuilder: (context, animation, secondaryAnimation, child) {
                               return FadeTransition(
                                 opacity: animation,

@@ -21,7 +21,7 @@ class AudioImageButton extends ConsumerWidget {
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: () {
-          // Use Riverpod provider to play SFX, respecting user settings
+          // Use Riverpod provider to play SFX, w/ user settings
           ref
               .read(audioControllerProvider.notifier)
               .playSfx('button-click.mp3');

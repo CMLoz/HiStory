@@ -7,6 +7,7 @@ import 'package:history/ui/widgets/audio_image_button.dart';
 import 'package:history/ui/widgets/typewriter_text.dart';
 import 'package:history/ui/screens/main_menu_screen.dart';
 import 'package:history/ui/screens/options_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class RizalGameScreen extends ConsumerStatefulWidget {
   const RizalGameScreen({super.key});
@@ -16,10 +17,21 @@ class RizalGameScreen extends ConsumerStatefulWidget {
 }
 
 class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
+  // Game Screen Opacity (for scene transitions)
   double _opacity = 0.0;
+  Duration _opacityDuration = const Duration(seconds: 2);
+
   bool _assetsLoaded = false;
   bool _sceneAssetsLoaded = false;
   bool _isPaused = false;
+
+  // Controls which node is currently displayed
+  int? _displayIndex;
+
+  // Chapter Title Screen State
+  bool _showChapterTitle = true; // Start with title screen by default
+  double _titleOpacity = 0.0;
+
   final GlobalKey<TypewriterTextState> _typewriterKey =
       GlobalKey<TypewriterTextState>();
 
@@ -43,22 +55,12 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
         context,
       ),
     ]);
-
-    if (mounted) {
-      Future.delayed(const Duration(milliseconds: 500), () {
-        if (mounted) {
-          setState(() {
-            _opacity = 1.0;
-          });
-        }
-      });
-    }
   }
 
-  void _preloadSceneAssets(List<DialogueNode> nodes) {
+  void _preloadSceneAssets(Chapter chapter) {
     if (_sceneAssetsLoaded || !mounted) return;
 
-    final uniqueImages = nodes.map((n) => n.bgImage).toSet();
+    final uniqueImages = chapter.nodes.map((n) => n.bgImage).toSet();
     for (var imgPath in uniqueImages) {
       if (imgPath.isNotEmpty && mounted) {
         precacheImage(AssetImage(imgPath), context);
@@ -67,64 +69,261 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
     _sceneAssetsLoaded = true;
   }
 
+  void _startChapterSequence() {
+    // 1. Fade in Title
+    setState(() {
+      _titleOpacity = 1.0;
+    });
+
+    // 2. Wait, then Fade out Title
+    Future.delayed(const Duration(seconds: 3), () {
+      if (mounted) {
+        setState(() {
+          _titleOpacity = 0.0;
+        });
+
+        // 3. Wait for fade out, then hide title screen and fade in scene
+        Future.delayed(const Duration(seconds: 2), () {
+          if (mounted) {
+            setState(() {
+              _showChapterTitle = false;
+              // Reset game opacity to 0 before showing scene
+              _opacity = 0.0;
+            });
+
+            // 4. Fade in Scene
+            Future.delayed(const Duration(milliseconds: 100), () {
+              if (mounted) {
+                setState(() {
+                  _opacity = 1.0;
+                });
+              }
+            });
+          }
+        });
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    final asyncNodes = ref.watch(dialogueNodesProvider);
+    final asyncChapter = ref.watch(dialogueNodesProvider);
     final GameStateNotifier gameNotifier = ref.read(gameStateProvider.notifier);
     final int textSpeedMs = ref.watch(textSpeedProvider);
 
+    // Listen to game state changes for scene transitions (intra-chapter)
+    ref.listen<int>(gameStateProvider, (previous, next) {
+      if (asyncChapter.hasValue && !_showChapterTitle) {
+        final nodes = asyncChapter.value!.nodes;
+        // Ensure indices are valid
+        if (previous != null &&
+            previous < nodes.length &&
+            next < nodes.length) {
+          final prevNode = nodes[previous];
+          final nextNode = nodes[next];
+
+          // Check if scene changed
+          final bool sceneChanged =
+              (prevNode.sceneId != null && nextNode.sceneId != null)
+              ? prevNode.sceneId != nextNode.sceneId
+              : prevNode.bgImage != nextNode.bgImage;
+
+          if (sceneChanged) {
+            // Scene Transition: Fade Out -> Update -> Fade In
+            setState(() {
+              _opacity = 0.0;
+              _opacityDuration = const Duration(milliseconds: 1500);
+            });
+
+            Future.delayed(const Duration(milliseconds: 1500), () {
+              if (mounted) {
+                setState(() {
+                  _displayIndex = next;
+                });
+
+                Future.delayed(const Duration(milliseconds: 100), () {
+                  if (mounted) {
+                    setState(() {
+                      _opacity = 1.0;
+                    });
+                  }
+                });
+              }
+            });
+          } else {
+            // Instant update
+            setState(() {
+              _displayIndex = next;
+            });
+          }
+        } else {
+          setState(() {
+            _displayIndex = next;
+          });
+        }
+      }
+    });
+
+    // Listen for Chapter changes to reset sequence
+    ref.listen(dialogueNodesProvider, (prev, next) {
+      if (next is AsyncData) {
+        // New chapter loaded
+
+        setState(() {
+          _showChapterTitle = true;
+          _titleOpacity = 0.0;
+          _opacity = 0.0;
+          _displayIndex = 0; // Reset index for new chapter
+          _sceneAssetsLoaded = false; // Trigger asset reload
+        });
+
+        gameNotifier
+            .reset(); // Reset global game state index after setting title flag
+
+        // Start the sequence for the new chapter
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          _startChapterSequence();
+        });
+      }
+    });
+
     return Scaffold(
       backgroundColor: Colors.black,
-      body: asyncNodes.when(
+      body: asyncChapter.when(
         loading: () =>
             const Center(child: CircularProgressIndicator(color: Colors.amber)),
-        error: (error, stack) => const Center(
+        error: (error, stack) => Center(
           child: Text(
-            'Error loading dialogue',
-            style: TextStyle(color: Colors.white),
+            'Error loading chapter: $error',
+            style: const TextStyle(color: Colors.white),
           ),
         ),
-        data: (nodes) {
-          // Preload all chapter assets safely
-          if (!_sceneAssetsLoaded) {
-            // Defer to next frame to avoid build-phase locking if precache takes significant time (though it returns Future)
-            // But since we just want to fire it off:
+        data: (chapter) {
+          final nodes = chapter.nodes;
+
+          // Sync initial index safely
+          if (_displayIndex == null) {
             WidgetsBinding.instance.addPostFrameCallback((_) {
-              _preloadSceneAssets(nodes);
+              if (mounted) {
+                setState(() {
+                  _displayIndex = ref.read(gameStateProvider);
+                });
+                // Start the very first chapter sequence if it hasn't run
+                if (_showChapterTitle) {
+                  _startChapterSequence();
+                }
+              }
+            });
+            return const SizedBox.shrink();
+          }
+
+          if (!_sceneAssetsLoaded) {
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _preloadSceneAssets(chapter);
             });
           }
 
-          final int dialogueIndex = ref.watch(gameStateProvider);
-          final DialogueNode currentNode = nodes[dialogueIndex];
+          // --- CHAPTER TITLE SCREEN ---
+          if (_showChapterTitle) {
+            final String chapterId = ref.read(currentChapterProvider);
+            final String chapterLabel = chapterId.replaceAll('chapter', 'CHAPTER ');
+            
+            return Container(
+              color: Colors.black,
+              width: double.infinity,
+              height: double.infinity,
+              child: Center(
+                child: AnimatedOpacity(
+                  opacity: _titleOpacity,
+                  duration: const Duration(seconds: 2),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        chapterLabel.toUpperCase(),
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.cinzelDecorative(
+                          fontSize: 42,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.amber,
+                          letterSpacing: 8.0,
+                          shadows: [
+                            const Shadow(
+                              color: Colors.amber,
+                              blurRadius: 20,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 24),
+                      Text(
+                        chapter.title.toUpperCase(),
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.cinzel(
+                          fontSize: 20,
+                          color: Colors.white70,
+                          letterSpacing: 4.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          }
+
+          // --- GAME SCENE ---
+          // Safety check for index
+          if (_displayIndex! >= nodes.length) {
+            return const SizedBox.shrink();
+          }
+
+          final DialogueNode currentNode = nodes[_displayIndex!];
           final bool isChoice = currentNode.isChoice;
+          final bool isLastNode = _displayIndex == nodes.length - 1;
 
           return GestureDetector(
-            // Only allow tap-to-advance on normal dialogue nodes
-            onTap: isChoice || _isPaused
+            onTap: isChoice || _isPaused || _showChapterTitle || _opacity != 1.0
                 ? null
                 : () {
+                    // Typewriter finish logic
                     if (_typewriterKey.currentState?.isFinished == false) {
                       _typewriterKey.currentState?.completeText();
                     } else {
-                      gameNotifier.nextDialogue(nodes.length);
+                      if (isLastNode) {
+                        // --- END OF CHAPTER LOGIC ---
+                        setState(() {
+                          _opacity = 0.0;
+                          _opacityDuration = const Duration(milliseconds: 1500);
+                        });
+
+                        Future.delayed(const Duration(milliseconds: 1500), () {
+                          if (mounted) {
+                            // Proceed to next chapter
+                            ref
+                                .read(currentChapterProvider.notifier)
+                                .nextChapter();
+                            // Reset state handled by ref.listen above
+                          }
+                        });
+                      } else {
+                        // Next dialogue
+                        gameNotifier.nextDialogue(nodes.length);
+                      }
                     }
                   },
             child: AnimatedOpacity(
               opacity: _opacity,
-              duration: const Duration(seconds: 2),
+              duration: _opacityDuration,
               child: Stack(
                 children: [
-                  // Background Image with Fade Transition
+                  // Background Image
                   Positioned.fill(
-                    child: AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 1000),
-                      child: Image.asset(
-                        currentNode.bgImage,
-                        key: ValueKey<String>(currentNode.bgImage),
-                        fit: BoxFit.cover,
-                        gaplessPlayback:
-                            true, // Prevents flickering during load
-                      ),
+                    child: Image.asset(
+                      currentNode.bgImage,
+                      key: ValueKey<String>(currentNode.bgImage),
+                      fit: BoxFit.cover,
+                      gaplessPlayback: true,
                     ),
                   ),
 

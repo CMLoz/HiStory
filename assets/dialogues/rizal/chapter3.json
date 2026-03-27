@@ -1,0 +1,146 @@
+{
+  "chapterId": "rizal_chapter3",
+  "title": "The Mission of Reform",
+  "scenes": [
+    {
+      "id": "scene_la_solidaridad",
+      "name": "Editorial Office of La Solidaridad",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "In Europe, far from his homeland, Rizal continues his mission—not with weapons, but with ideas. Together with fellow reformists, he contributes to La Solidaridad, a publication that gives voice to Filipino grievances under Spanish rule.",
+          "bgImage": "assets/bg/busy_printing.png"
+        },
+        {
+          "speakerName": "NPC: Graciano López Jaena",
+          "text": "Our publication must remain fearless. Each article we print carries the truth that our people cannot freely express in the Philippines.",
+          "bgImage": "assets/bg/busy_printing.png"
+        },
+        {
+          "speakerName": "NPC: Marcelo H. del Pilar",
+          "text": "We demand what is just—representation, equality, and the end of abuses by those in power. Nothing more, nothing less.",
+          "bgImage": "assets/bg/busy_printing.png"
+        },
+        {
+          "speakerName": "PLAYER: José Rizal",
+          "text": "Then let our words be guided by reason and clarity. If Spain is to listen, we must show that our cause is rooted in justice, not rebellion.",
+          "bgImage": "assets/bg/busy_printing.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_writing_article",
+      "name": "Rizal Writing an Article",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Rizal believes that education is the key to national progress. Through his writings, he seeks to awaken the minds of Filipinos and inspire them to think critically about their situation.",
+          "bgImage": "assets/bg/rizal_writing_alone.png"
+        },
+        {
+          "speakerName": "PLAYER: José Rizal",
+          "text": "(writing aloud) “A nation cannot rise if its people remain in darkness. Education is not merely knowledge—it is the ability to question, to reason, and to demand what is right.”",
+          "bgImage": "assets/bg/rizal_writing_alone.png"
+        },
+        {
+          "speakerName": " ",
+          "text": "(Mariano Ponce enters the room.)",
+          "bgImage": "assets/bg/rizal_writing_alone.png"
+        },
+        {
+          "speakerName": "NPC: Mariano Ponce",
+          "text": "Your articles are being read by many, Rizal. They are beginning to question the authority they once accepted without doubt.",
+          "bgImage": "assets/bg/rizal_writing_alone.png"
+        },
+        {
+          "speakerName": "PLAYER: José Rizal",
+          "text": "Then our efforts are not in vain. Change begins when people learn to see the truth for themselves.",
+          "bgImage": "assets/bg/rizal_writing_alone.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_blumentritt_correspondence",
+      "name": "Correspondence with Blumentritt",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Even beyond the circle of Filipino reformists, Rizal finds allies who recognize the importance of his work. Among them is Ferdinand Blumentritt, a trusted friend and intellectual supporter.",
+          "bgImage": "assets/bg/rizal_bluementritt.png"
+        },
+        {
+          "speakerName": "PLAYER: José Rizal",
+          "text": "(writing aloud) “The movement grows stronger, yet so does the scrutiny of Spanish authorities. Still, I believe that reform through peaceful means remains the most just course.”",
+          "bgImage": "assets/bg/rizal_bluementritt.png"
+        },
+        {
+          "speakerName": " ",
+          "text": "(Blumentritt is seen reading Rizal's letter.)",
+          "bgImage": "assets/bg/rizal_bluementritt.png"
+        },
+        {
+          "speakerName": "NPC: Ferdinand Blumentritt",
+          "text": "You stand at a crucial point in history, Rizal. Your ideas inspire hope—but they also provoke fear among those who wish to maintain control.",
+          "bgImage": "assets/bg/rizal_bluementritt.png"
+        },
+        {
+          "speakerName": "NPC: Ferdinand Blumentritt",
+          "text": "(writing) “Proceed with caution, my friend. The path you walk is noble, but not without danger.”",
+          "bgImage": "assets/bg/rizal_bluementritt.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_strategy_meeting",
+      "name": "Reformists’ Strategy Meeting",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "As the movement grows, so do the challenges it faces. Reformists must decide how to push forward despite resistance from Spanish authorities.",
+          "bgImage": "assets/bg/tension_reformists.png"
+        },
+        {
+          "speakerName": "NPC: Marcelo H. del Pilar",
+          "text": "Our demands remain clear: representation in the Spanish Cortes, equality before the law, and justice for Filipinos.",
+          "bgImage": "assets/bg/tension_reformists.png"
+        },
+        {
+          "speakerName": "NPC: Graciano López Jaena",
+          "text": "But Spain continues to delay and dismiss us. How long can we rely on patience alone?",
+          "bgImage": "assets/bg/tension_reformists.png"
+        },
+        {
+          "speakerName": "NPC: Mariano Ponce",
+          "text": "The people are awakening. They look to us for guidance.",
+          "bgImage": "assets/bg/tension_reformists.png"
+        },
+        {
+          "speakerName": "PLAYER: José Rizal",
+          "text": "We must remain steadfast. Reform achieved through reason will endure longer than change brought by force. We must prove that we are worthy of the rights we seek.",
+          "bgImage": "assets/bg/tension_reformists.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_rising_suspicion",
+      "name": "Rising Suspicion from Authorities",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "While Rizal’s ideas spread among Filipinos, they also attract the attention of Spanish authorities, who begin to see his influence as a growing threat.",
+          "bgImage": "assets/bg/shadow_spain.png"
+        },
+        {
+          "speakerName": "NPC: Spanish Official",
+          "text": "(voice-over) “His writings are dangerous. They encourage people to question authority.”",
+          "bgImage": "assets/bg/shadow_spain.png"
+        },
+        {
+          "speakerName": "NPC: Another Official",
+          "text": "A man who inspires thought can be more dangerous than one who wields a weapon.",
+          "bgImage": "assets/bg/shadow_spain.png"
+        }
+      ]
+    }
+  ]
+}
