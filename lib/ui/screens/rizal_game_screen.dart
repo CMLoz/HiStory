@@ -114,6 +114,8 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
     final GameStateNotifier gameNotifier = ref.read(gameStateProvider.notifier);
     final int textSpeedMs = ref.watch(textSpeedProvider);
 
+    final String currentChapterId = ref.watch(currentChapterProvider);
+
     // Listen to game state changes for scene transitions (intra-chapter)
     ref.listen<int>(gameStateProvider, (previous, next) {
       if (asyncChapter.hasValue && !_showChapterTitle) {
@@ -261,11 +263,40 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
 
                         Future.delayed(const Duration(milliseconds: 1500), () {
                           if (mounted) {
-                            // Proceed to next chapter
-                            ref
-                                .read(currentChapterProvider.notifier)
-                                .nextChapter();
-                            // Reset state handled by ref.listen above
+                            if (currentChapterId == 'final_ending') {
+                              // Game finished: Return to menu
+                              Navigator.of(context).pushAndRemoveUntil(
+                                PageRouteBuilder(
+                                  transitionDuration:
+                                      const Duration(seconds: 2),
+                                  pageBuilder:
+                                      (
+                                        context,
+                                        animation,
+                                        secondaryAnimation,
+                                      ) => const MainMenuScreen(),
+                                  transitionsBuilder:
+                                      (
+                                        context,
+                                        animation,
+                                        secondaryAnimation,
+                                        child,
+                                      ) {
+                                        return FadeTransition(
+                                          opacity: animation,
+                                          child: child,
+                                        );
+                                      },
+                                ),
+                                (route) => false,
+                              );
+                            } else {
+                              // Proceed to next chapter
+                              ref
+                                  .read(currentChapterProvider.notifier)
+                                  .nextChapter();
+                              // Reset state handled by ref.listen above
+                            }
                           }
                         });
                       } else {
@@ -395,35 +426,20 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
                               ),
                               const SizedBox(width: 40),
                               // --- RESET BUTTON ---
-                              Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  AudioImageButton(
-                                    assetPath:
-                                        'assets/images/Home Square Button.png',
-                                    width: 80,
-                                    onPressed: () {
-                                      // Reset both chapter and dialogue index
-                                      ref
-                                          .read(currentChapterProvider.notifier)
-                                          .reset();
-                                      ref
-                                          .read(gameStateProvider.notifier)
-                                          .reset();
-                                      setState(() {
-                                        _isPaused = false;
-                                      });
-                                    },
-                                  ),
-                                  const SizedBox(height: 4),
-                                  Text(
-                                    'RESET',
-                                    style: GameTheme.bodyStyle.copyWith(
-                                      fontSize: 10,
-                                      color: Colors.white70,
-                                    ),
-                                  ),
-                                ],
+                              AudioImageButton(
+                                assetPath:
+                                    'assets/images/Return Square Button.png',
+                                width: 80,
+                                onPressed: () {
+                                  // Reset both chapter and dialogue index
+                                  ref
+                                      .read(currentChapterProvider.notifier)
+                                      .reset();
+                                  ref.read(gameStateProvider.notifier).reset();
+                                  setState(() {
+                                    _isPaused = false;
+                                  });
+                                },
                               ),
                               const SizedBox(width: 40),
                               AudioImageButton(
@@ -461,7 +477,10 @@ class _ChapterTitleScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final String chapterId = ref.watch(currentChapterProvider);
-    final String chapterLabel = chapterId.replaceAll('chapter', 'CHAPTER ');
+    final String chapterLabel =
+        chapterId == 'final_ending'
+            ? 'FINAL EPILOGUE'
+            : chapterId.replaceAll('chapter', 'CHAPTER ');
 
     return Container(
       color: Colors.black,
@@ -482,12 +501,7 @@ class _ChapterTitleScreen extends ConsumerWidget {
                   fontWeight: FontWeight.bold,
                   color: Colors.amber,
                   letterSpacing: 8.0,
-                  shadows: [
-                    const Shadow(
-                      color: Colors.amber,
-                      blurRadius: 20,
-                    ),
-                  ],
+                  shadows: [const Shadow(color: Colors.amber, blurRadius: 20)],
                 ),
               ),
               const SizedBox(height: 24),
@@ -588,7 +602,6 @@ class _DialogueBox extends StatelessWidget {
     );
   }
 }
-
 
 /// A single interactive choice box, reusing the dialogue_box asset.
 class _ChoiceBox extends StatefulWidget {

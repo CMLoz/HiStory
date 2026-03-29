@@ -1,104 +1,97 @@
-SCENE 6 – Critical Decision: Rizal’s Role
-Background: dormroom.png
+Chapter 5: Returning to the Philippines
 
-NARRATOR: Caught between his ideals and the risks they bring, Rizal faces a defining moment. The path he chooses will shape not only his future—but the future of the reform movement.
+SCENE 1 – manila_harbor
+Background: Manila harbor, with a tense atmosphere.
 
-PLAYER: José Rizal (internal monologue) My words have power… but they also carry consequences. What is the best way to serve my country?
+NARRATOR: After years abroad, Rizal makes a bold and dangerous decision—to return to the Philippines. He is fully aware that his writings have made him a target of suspicion.
 
-→ BRANCHING CHOICE (Major Historical Impact):
- - "Continue leading the reform movement through writing and publications."
- - "Distance myself from political leadership and focus on education and personal works."
- - "Return to the Philippines to witness conditions firsthand."
+PLAYER: José Rizal (internal monologue): I return not because it is safe… but because it is necessary. A nation cannot be understood from afar. If I am to serve my people, I must stand among them.
 
-FINAL SCENE – Reflection
-Background: rizal_booksarticles.png
 
-NARRATOR:In a time of oppression, ideas become instruments of change. Rizal’s writings ignite awareness, planting the seeds of national identity among Filipinos.
+SCENE 2 – Founding of La Liga Filipina
+Background: laliga_office
 
-PLAYER: José Rizal (internal monologue)The struggle for reform is far from over. But as long as minds continue to awaken, there is hope for the future.
+NARRATOR: Shortly after his arrival, Rizal established La Liga Filipina—a movement dedicated to unity, mutual aid, and peaceful reform.
 
-Chapter 4: A Darker Vision
+NPC: Domingo Franco: This organization… It brings hope. A united people is stronger than a divided one.
 
-SCENE 1 – Rizal’s Study, Europe (1891)
-Background: rizal_darker_room
+PLAYER: José Rizal: Our goal is not rebellion, but progress. Through cooperation, education, and lawful reform, we can build a better future for our country.
 
-NARRATOR: Years after the publication of his first novel, Rizal once again takes up his pen. But this time, his vision has changed. The hope that once filled his writings is now shadowed by frustration and urgency.
+NARRATOR: But even peaceful unity is seen as dangerous by those in power.
 
-PLAYER: José Rizal (writing aloud): If injustice continues unchecked, it will not end in peace… but in destruction. A society pushed too far will inevitably resist.
 
-NARRATOR: This new work reflects a deeper understanding of oppression—one that acknowledges the dangerous consequences of prolonged abuse.
+SCENE 3 – Suspicion of Authorities
 
-SCENE 2 – Discussion with Blumentritt
-Background: rizal_bluementritt
-
-NARRATOR: As Rizal develops his new novel, he once again confides in his trusted friend, Ferdinand Blumentritt.
-
-PLAYER: José Rizal (writing aloud): My friend, this novel is unlike my previous work. It is darker—more direct in its warning. I fear that if reforms are ignored, the future may be filled with conflict.
-(Blumentritt is seen reading Rizal's letter.)
-
-NPC: Ferdinand Blumentritt: You speak of consequences that many refuse to acknowledge. Your message is clear—but it may be misunderstood by those who fear it.
-
-NPC: Ferdinand Blumentritt (writing): Take care, Rizal. A warning, if misinterpreted, can be seen as a call to action.
-
-SCENE 3 – Publication of the Novel
-
-Background: busier_printing 
-
-NARRATOR:In 1891, Rizal publishes his second novel, El Filibusterismo. Unlike Noli Me Tángere, this work carries a darker tone—reflecting the growing tension between reform and resistance.
-
-NPC: Mariano PonceThis… is far more intense than your first novel. It does not simply reveal injustice—it shows what may happen if it continues.
-
-PLAYER: José RizalThat is precisely its purpose. It is not meant to encourage violence, but to warn against the consequences of ignoring reform. If change does not come, anger will take its place.
-
-SCENE 4 – Reformists’ Reaction
-
-Background: tension_reformists
-
-NARRATOR: The novel spreads quickly among Filipinos, strengthening nationalist ideas—but also raising concerns among reformists.
-
-NPC: Marcelo H. del Pilar: Your message is powerful, Rizal—but also dangerous. Some may interpret it as justification for rebellion.
-
-NPC: Mariano Ponce: Yet it speaks a truth we cannot ignore. The people grow restless. Their patience has limits.
-
-PLAYER: José Rizal: I do not advocate violence. I seek to prevent it. If those in power understand the consequences of their actions, perhaps they will finally listen.
-
-SCENE 5 – Reaction of Spanish Authorities
 Background: shadow_spain
 
-NARRATOR: Spanish authorities, however, see the novel differently. To them, Rizal’s words are no longer just criticism—they are a threat.
+NARRATOR: The Spanish authorities waste no time. To them, Rizal’s return—and his growing influence—pose a direct threat to colonial stability.
 
-NPC: Spanish Official (voice-over): This book is dangerous. It spreads ideas that could incite rebellion among the natives.
+NPC: Spanish authorities: Rizal’s presence alone stirs unrest. His organization must not be allowed to grow.
+NPC: Another Official: Arrest him. Remove him before his ideas spread further.
 
-NPC: Another Official: Rizal must be watched closely. His influence is growing beyond control.
 
-SCENE 6 – The Weight of Influence
+SCENE 4 – Arrest and Exile
 
-Background: rizal_elfili_alone
+Background: rizal_escorted
 
-NARRATOR: As his ideas spread, Rizal faces the reality of his growing influence. His words inspire hope—but also fear, both among the people and the authorities.
+NARRATOR: Within days of founding La Liga Filipina, Rizal is arrested. Without trial, he is exiled to Dapitan in Mindanao—far from the political center of the country.
 
-PLAYER: José Rizal (internal monologue): My intention was to warn, not to provoke. Yet the line between the two grows thinner with each passing day. If my words awaken the people… what path will they choose?
+PLAYER: José Rizal (internal monologue): So soon… yet not unexpected. If my freedom must be taken for the sake of my beliefs, then so be it. My mission does not end here.
 
-CRITICAL MOMENT – Interpretation of the Message
 
-Background: dim_crossroads
+SCENE 5 – Life in Dapitan
 
-NARRATOR: The meaning of Rizal’s work now lies not only in what he has written—but in how it is understood by those who read it.
+Background: rizal_dapitan
+
+NARRATOR: In exile, Rizal turns away from politics—but not from service. In Dapitan, he becomes a teacher, a doctor, and a community leader.
+
+PLAYER: José Rizal: If I cannot fight through politics, I will serve through action. Education, medicine, and compassion—these too are forms of reform.
+
+NARRATOR: Even in isolation, Rizal continues to shape the future of his people
+
+
+SCENE 6 – Rise of the Katipunan
+
+Background: forming_katip
+
+NARRATOR: While Rizal remains in exile, a new movement begins to rise—one that no longer believes reform is enough.
+
+(Andrés Bonifacio appears.)
+
+NPC: Andrés Bonifacio: The time for waiting is over. If freedom is denied, then it must be fought for.
+
+NARRATOR: Groups like the Katipunan draw inspiration from Rizal’s writings—but take a different path, one that leads toward revolution.
+
+
+CRITICAL MOMENT – Rizal’s Role in the Struggle
+
+Background: rizal_dapitan
+
+NARRATOR: As events unfold beyond his reach, Rizal faces the reality that his ideas have taken on a life of their own.
+
+PLAYER: José Rizal (internal monologue): I sought reform, not revolution… yet my words have awakened a nation. What path will they ultimately choose?
 
 CHOICES:
-- "Emphasize that the novel is a warning to prevent revolution."
-- "Distance from the novel’s more radical implications."
+ - “Remain committed to peaceful reform and education.”
+ - “Support the growing call for stronger resistance.”
+ 
 
-FINAL SCENE – Reflection
+FINAL SCENE – Chapter Reflection
 
-Background: rizal_overlooking
+Background: dapitan_sunset
 
-NARRATOR: With El Filibusterismo, Rizal deepens the conversation about justice, reform, and the consequences of oppression. His ideas continue to spread, shaping the thoughts of a nation on the brink of change.
-
-PLAYER: José Rizal (internal monologue): If injustice continues, the future will not be decided by words alone… but by the actions of those who have awakened.
-
+NARRATOR: Though separated from the center of power, Rizal’s influence continues to spread. His ideas live on in the minds of Filipinos—guiding, inspiring, and dividing them on the question of how to achieve freedom.
 
 
+=== FINAL ENDING: Legacy of a Nation ===
+Background: *ALL SCENE BACKGROUNDS IN THE BG FOLDER LOOPED*
 
+NARRATOR: From a young student in Europe to a voice that awakened a nation, José Rizal’s journey is one of courage, intellect, and sacrifice.
 
+Through his novels, essays, and actions, he revealed the truth about colonial injustice. He believed in reform through reason, education, and unity.
 
+Yet history is shaped not only by ideas—but by how people act upon them.
+
+(Images of reformists and revolutionaries appear side by side.)
+
+NARRATOR:Some followed his path of peaceful reform. Others, inspired by the same ideas, chose revolution
