@@ -1,0 +1,55 @@
+{
+  "chapterId": "bonifacio_chapter5",
+  "title": "Legacy of the Revolution",
+  "scenes": [
+    {
+      "id": "scene_unfinished_fight",
+      "name": "The Unfinished Fight",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Though Andrés Bonifacio's life was tragically cut short, his unwavering commitment to independence and his role in igniting the Philippine Revolution left an indelible mark on history.",
+          "bgImage": "assets/bg/Bonifacio/kkk_montage.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_spark",
+      "name": "The Spark That Ignited a Nation",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Bonifacio, the \"Father of the Philippine Revolution,\" awakened a nation's spirit. His cry for liberty, born in the streets of Tondo and amplified at Pugad Lawin, became the rallying call for a people determined to be free from colonial oppression.",
+          "bgImage": "assets/bg/Bonifacio/pugad_lawin.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_ideals",
+      "name": "The Ideals Endure",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "The ideals he championed within the Katipunan – equality, justice, and mutual aid – continued to inspire the struggle for freedom, even as the path forward became more complex.",
+          "bgImage": "assets/bg/Bonifacio/katip_welfare.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_gratitude",
+      "name": "A Nation's Gratitude",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "His courage, his vision, and his ultimate sacrifice laid the foundation for the Philippines' eventual independence. Andrés Bonifacio remains a symbol of the Filipino people's resilience and their unyielding desire for self-determination.",
+          "bgImage": "assets/bg/Bonifacio/kkk_manila.jpg"
+        },
+        {
+          "speakerName": "NARRATOR",
+          "text": "His legacy is etched not only in the annals of history but in the very heart of the nation he fought to liberate",
+          "bgImage": "assets/bg/Bonifacio/kkk_manila.jpg"
+        }
+      ]
+    }
+  ]
+}

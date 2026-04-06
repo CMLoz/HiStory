@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:history/ui/screens/rizal_game_screen.dart';
+import 'package:history/ui/screens/bonifacio_game_screen.dart';
 import 'package:history/ui/theme/game_theme.dart';
 import 'package:history/ui/widgets/audio_image_button.dart';
 import 'package:history/ui/widgets/pixel_background.dart';
@@ -68,9 +69,17 @@ class CharacterSelectScreen extends StatelessWidget {
                       context, 
                       nameplateAsset: 'assets/images/boni_nameplate.png',
                       onSelect: () {
-                        // TODO: Handle Bonifacio selection
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Bonifacio Selected')),
+                        Navigator.of(context).push(
+                          PageRouteBuilder(
+                            transitionDuration: const Duration(seconds: 2),
+                            pageBuilder: (context, animation, secondaryAnimation) => const BonifacioGameScreen(),
+                            transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                              return FadeTransition(
+                                opacity: animation,
+                                child: child,
+                              );
+                            },
+                          ),
                         );
                       },
                     ),

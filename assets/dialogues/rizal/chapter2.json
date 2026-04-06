@@ -9,12 +9,12 @@
         {
           "speakerName": "PLAYER: José Rizal",
           "text": "(internal monologue, voice strained with fatigue and conviction) “Each page I fill is a step deeper into the heart of our suffering. The injustices are not mere accidents of governance; they are the deliberate architecture of oppression, built by those who feast on our silence. How to dismantle such a fortress? Not with the crude force of arms, but with the sharp, enduring edge of truth.”",
-          "bgImage": "assets/bg/dormroom.png"
+          "bgImage": "assets/bg/Rizal/dormroom.png"
         },
         {
           "speakerName": "PLAYER: José Rizal",
           "text": "(He picks up a manuscript, his fingers tracing the title. His expression is a mixture of hope and trepidation.) “A novel… a story woven from the very fabric of our lives. If my people can see their own struggles, their own pain, mirrored in these pages, perhaps they will finally grasp the true depth of their subjugation.”",
-          "bgImage": "assets/bg/dormroom.png"
+          "bgImage": "assets/bg/Rizal/dormroom.png"
         }
       ]
     },
@@ -25,27 +25,27 @@
         {
           "speakerName": "NPC: Maximo Viola",
           "text": "Rizal, you seem a world away. Your pen is your constant companion, but your mind… it’s adrift in distant shores. What great work consumes you so?",
-          "bgImage": "assets/bg/cafe.png"
+          "bgImage": "assets/bg/Rizal/cafe.png"
         },
         {
           "speakerName": "PLAYER: José Rizal",
           "text": "I am crafting a novel, Maximo. A narrative that lays bare the truth of our homeland—the avarice of officials, the cruelty of the friars, the quiet despair of our people.",
-          "bgImage": "assets/bg/cafe.png"
+          "bgImage": "assets/bg/Rizal/cafe.png"
         },
         {
           "speakerName": "NPC: Maximo Viola",
           "text": "A monumental task. And a perilous one. Such truths are poison to those who thrive on deceit and power.",
-          "bgImage": "assets/bg/cafe.png"
+          "bgImage": "assets/bg/Rizal/cafe.png"
         },
         {
           "speakerName": "PLAYER: José Rizal",
           "text": "I know the risks. But silence is complicity. If no one dares to speak, injustice becomes immutable. This book must exist, even if it earns me condemnation… or worse.",
-          "bgImage": "assets/bg/cafe.png"
+          "bgImage": "assets/bg/Rizal/cafe.png"
         },
         {
           "speakerName": "NPC: Maximo Viola",
           "text": "(places a hand on Rizal’s shoulder, his voice firm) “Then you will not face these dangers alone. A work of such importance deserves to be seen, to be read. I will stand by you, Rizal. Whatever the cost.”",
-          "bgImage": "assets/bg/cafe.png"
+          "bgImage": "assets/bg/Rizal/cafe.png"
         }
       ]
     },
@@ -56,17 +56,17 @@
         {
           "speakerName": "PLAYER: José Rizal",
           "text": "(writing aloud, voice filled with a mix of hope and apprehension) “My dearest friend, I am nearing the completion of a novel that I pray will illuminate the conditions in my country. I confess, the potential consequences weigh heavily upon me, yet I feel compelled by a greater necessity.”",
-          "bgImage": "assets/bg/rizal_bluementritt.png"
+          "bgImage": "assets/bg/Rizal/rizal_bluementritt.png"
         },
         {
           "speakerName": "NPC: Ferdinand Blumentritt",
           "text": "(reading Rizal’s words, then writing his reply) “Rizal, your courage in confronting these truths is truly remarkable. But you must tread with utmost caution. A work that dares to expose such deep-seated corruption will inevitably provoke formidable adversaries.”",
-          "bgImage": "assets/bg/rizal_bluementritt.png"
+          "bgImage": "assets/bg/Rizal/rizal_bluementritt.png"
         },
         {
           "speakerName": "NPC: Ferdinand Blumentritt",
           "text": "(writing) “Your novel may offer clarity, but it will also place you in grave danger. Yet, history remembers those who champion truth against the tide. Know that I stand with you in spirit, my friend.”",
-          "bgImage": "assets/bg/rizal_bluementritt.png"
+          "bgImage": "assets/bg/Rizal/rizal_bluementritt.png"
         }
       ]
     },
@@ -77,27 +77,27 @@
         {
           "speakerName": "NPC: Maximo Viola",
           "text": "(holding a bound copy, his face alight with triumph and relief) “It is done, Rizal. Your novel… it is finally born into the world.”",
-          "bgImage": "assets/bg/printing_press.png"
+          "bgImage": "assets/bg/Rizal/printing_press.png"
         },
         {
           "speakerName": "PLAYER: José Rizal",
           "text": "(takes the book, his hands trembling slightly. He opens it, his gaze sweeping over the pages.) “Noli Me Tángere… ‘Touch Me Not.’ This is more than a collection of words; it is a mirror held up to our society, reflecting the shadows that many choose to ignore.”",
-          "bgImage": "assets/bg/printing_press.png"
+          "bgImage": "assets/bg/Rizal/printing_press.png"
         },
         {
           "speakerName": "NPC: Maximo Viola",
           "text": "Do you truly believe our people will grasp its message, Rizal? Or will it be too much, too soon?",
-          "bgImage": "assets/bg/printing_press.png"
+          "bgImage": "assets/bg/Rizal/printing_press.png"
         },
         {
           "speakerName": "PLAYER: José Rizal",
           "text": "They must. If these pages can ignite a single spark of realization, a single question in their minds, then the awakening has begun. Change starts with seeing.",
-          "bgImage": "assets/bg/printing_press.png"
+          "bgImage": "assets/bg/Rizal/printing_press.png"
         },
         {
           "speakerName": "",
           "text": "",
-          "bgImage": "assets/bg/printing_press.png",
+          "bgImage": "assets/bg/Rizal/printing_press.png",
           "choices": [
             {
               "text": "Distribute the book widely.",
@@ -118,22 +118,22 @@
         {
           "speakerName": "NPC: Filipino Reader",
           "text": "(voice-over) “Dios mío… this is our life. The abuse, the suffering… it is all here. It is our reality.”",
-          "bgImage": "assets/bg/two_sides.png"
+          "bgImage": "assets/bg/Rizal/two_sides.png"
         },
         {
           "speakerName": "NPC: Another Reader",
           "text": "(voice-over) “I never understood the depth of their power, the extent of their cruelty… until I read this. It’s as if a veil has been lifted.”",
-          "bgImage": "assets/bg/two_sides.png"
+          "bgImage": "assets/bg/Rizal/two_sides.png"
         },
         {
           "speakerName": "NPC: Spanish Friar",
           "text": "(voice sharp with fury) “This book is poison! It incites sedition and undermines the very foundations of our authority!”",
-          "bgImage": "assets/bg/two_sides.png"
+          "bgImage": "assets/bg/Rizal/two_sides.png"
         },
         {
           "speakerName": "NPC: Spanish Official",
           "text": "(voice cold and menacing) “Rizal has overstepped. This insidious work must be condemned, its influence crushed, before it ignites a true rebellion.”",
-          "bgImage": "assets/bg/two_sides.png"
+          "bgImage": "assets/bg/Rizal/two_sides.png"
         }
       ]
     },
@@ -144,17 +144,17 @@
         {
           "speakerName": "NPC: Marcelo H. del Pilar",
           "text": "(his expression grave, but with a glint of admiration) “Rizal, your novel has indeed stirred the waters. It has reached many, igniting conversations, but it has also drawn the ire of the powerful. The backlash is swift and severe.”",
-          "bgImage": "assets/bg/people_reformist.png"
+          "bgImage": "assets/bg/Rizal/people_reformist.png"
         },
         {
           "speakerName": "PLAYER: José Rizal",
           "text": "“That was the inevitable consequence. Truth, when unveiled, often meets resistance. But if even a fraction of our people begin to truly see, to question, then this storm is a price worth paying.”",
-          "bgImage": "assets/bg/people_reformist.png"
+          "bgImage": "assets/bg/Rizal/people_reformist.png"
         },
         {
           "speakerName": "NPC: Marcelo H. del Pilar",
           "text": "“You have galvanized our movement, Rizal. Your words have given us not only a narrative but a renewed sense of urgency and a clearer target.”",
-          "bgImage": "assets/bg/people_reformist.png"
+          "bgImage": "assets/bg/Rizal/people_reformist.png"
         }
       ]
     },
@@ -165,12 +165,12 @@
         {
           "speakerName": "PLAYER: José Rizal",
           "text": "(internal monologue, voice quiet but filled with an unshakeable resolve) “The truth has been set free. It is written, printed, and it cannot be unwritten. Whether it is hailed as a revelation or condemned as heresy, its journey has just begun. It will spread, like a seed in the wind, and it will find fertile ground.”",
-          "bgImage": "assets/bg/rizal_nightview.png"
+          "bgImage": "assets/bg/Rizal/rizal_nightview.png"
         },
         {
           "speakerName": "PLAYER: José Rizal",
           "text": "(He closes his eyes for a moment, a deep breath filling his lungs.) “My path is clear, and my resolve is firm. For the Philippines.”",
-          "bgImage": "assets/bg/rizal_nightview.png"
+          "bgImage": "assets/bg/Rizal/rizal_nightview.png"
         }
       ]
     }

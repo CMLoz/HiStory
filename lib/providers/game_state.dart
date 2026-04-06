@@ -160,3 +160,80 @@ class GameStateNotifier extends Notifier<int> {
 final gameStateProvider = NotifierProvider<GameStateNotifier, int>(() {
   return GameStateNotifier();
 });
+
+// ──────────────────────────────────────────────
+// Bonifacio-specific providers
+// ──────────────────────────────────────────────
+
+final bonifacioChapterProvider =
+    NotifierProvider<BonifacioChapterNotifier, String>(
+  BonifacioChapterNotifier.new,
+);
+
+class BonifacioChapterNotifier extends Notifier<String> {
+  @override
+  String build() {
+    return 'chapter1';
+  }
+
+  void nextChapter() {
+    if (state == 'chapter1') {
+      state = 'chapter2';
+    } else if (state == 'chapter2') {
+      state = 'chapter3';
+    } else if (state == 'chapter3') {
+      state = 'chapter4';
+    } else if (state == 'chapter4') {
+      state = 'chapter5';
+    }
+    // Extend for future chapters / final_ending
+  }
+
+  void reset() {
+    state = 'chapter1';
+  }
+}
+
+final bonifacioDialogueNodesProvider = FutureProvider<Chapter>((ref) async {
+  final chapterId = ref.watch(bonifacioChapterProvider);
+  final jsonString = await rootBundle.loadString(
+    'assets/dialogues/bonifacio/$chapterId.json',
+  );
+  final dynamic jsonData = jsonDecode(jsonString);
+
+  if (jsonData is List) {
+    final nodes = jsonData
+        .map((j) => DialogueNode.fromJson(j as Map<String, dynamic>))
+        .toList();
+    return Chapter(id: "legacy", title: "Legacy", nodes: nodes);
+  } else if (jsonData is Map<String, dynamic>) {
+    return Chapter.fromJson(jsonData);
+  }
+  return const Chapter(id: "error", title: "Error", nodes: []);
+});
+
+class BonifacioGameStateNotifier extends Notifier<int> {
+  @override
+  int build() {
+    return 0;
+  }
+
+  void reset() {
+    state = 0;
+  }
+
+  void nextDialogue(int maxNodes) {
+    if (state < maxNodes - 1) {
+      state++;
+    }
+  }
+
+  void jumpTo(int index) {
+    state = index;
+  }
+}
+
+final bonifacioGameStateProvider =
+    NotifierProvider<BonifacioGameStateNotifier, int>(() {
+  return BonifacioGameStateNotifier();
+});

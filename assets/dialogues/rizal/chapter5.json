@@ -9,12 +9,12 @@
         {
           "speakerName": "NARRATOR",
           "text": "After years abroad, Rizal makes a bold and dangerous decision—to return to the Philippines. He is fully aware that his writings have made him a target of suspicion.",
-          "bgImage": "assets/bg/manila_harbor.png"
+          "bgImage": "assets/bg/Rizal/manila_harbor.png"
         },
         {
           "speakerName": "PLAYER: José Rizal",
           "text": "(internal monologue): I return not because it is safe… but because it is necessary. A nation cannot be understood from afar. If I am to serve my people, I must stand among them.",
-          "bgImage": "assets/bg/manila_harbor.png"
+          "bgImage": "assets/bg/Rizal/manila_harbor.png"
         }
       ]
     },
@@ -25,22 +25,22 @@
         {
           "speakerName": "NARRATOR",
           "text": "Shortly after his arrival, Rizal established La Liga Filipina—a movement dedicated to unity, mutual aid, and peaceful reform.",
-          "bgImage": "assets/bg/laliga_office.png"
+          "bgImage": "assets/bg/Rizal/laliga_office.png"
         },
         {
           "speakerName": "NPC: Domingo Franco",
           "text": "This organization… It brings hope. A united people is stronger than a divided one.",
-          "bgImage": "assets/bg/laliga_office.png"
+          "bgImage": "assets/bg/Rizal/laliga_office.png"
         },
         {
           "speakerName": "PLAYER: José Rizal",
           "text": "Our goal is not rebellion, but progress. Through cooperation, education, and lawful reform, we can build a better future for our country.",
-          "bgImage": "assets/bg/laliga_office.png"
+          "bgImage": "assets/bg/Rizal/laliga_office.png"
         },
         {
           "speakerName": "NARRATOR",
           "text": "But even peaceful unity is seen as dangerous by those in power.",
-          "bgImage": "assets/bg/laliga_office.png"
+          "bgImage": "assets/bg/Rizal/laliga_office.png"
         }
       ]
     },
@@ -51,17 +51,17 @@
         {
           "speakerName": "NARRATOR",
           "text": "The Spanish authorities waste no time. To them, Rizal’s return—and his growing influence—pose a direct threat to colonial stability.",
-          "bgImage": "assets/bg/shadow_spain.png"
+          "bgImage": "assets/bg/Rizal/shadow_spain.png"
         },
         {
           "speakerName": "NPC: Spanish Authorities",
           "text": "Rizal’s presence alone stirs unrest. His organization must not be allowed to grow.",
-          "bgImage": "assets/bg/shadow_spain.png"
+          "bgImage": "assets/bg/Rizal/shadow_spain.png"
         },
         {
           "speakerName": "NPC: Spanish Official",
           "text": "Arrest him. Remove him before his ideas spread further.",
-          "bgImage": "assets/bg/shadow_spain.png"
+          "bgImage": "assets/bg/Rizal/shadow_spain.png"
         }
       ]
     },
@@ -72,12 +72,12 @@
         {
           "speakerName": "NARRATOR",
           "text": "Within days of founding La Liga Filipina, Rizal is arrested. Without trial, he is exiled to Dapitan in Mindanao—far from the political center of the country.",
-          "bgImage": "assets/bg/rizal_escorted.png"
+          "bgImage": "assets/bg/Rizal/rizal_escorted.png"
         },
         {
           "speakerName": "PLAYER: José Rizal",
           "text": "(internal monologue): So soon… yet not unexpected. If my freedom must be taken for the sake of my beliefs, then so be it. My mission does not end here.",
-          "bgImage": "assets/bg/rizal_escorted.png"
+          "bgImage": "assets/bg/Rizal/rizal_escorted.png"
         }
       ]
     },
@@ -88,17 +88,17 @@
         {
           "speakerName": "NARRATOR",
           "text": "In exile, Rizal turns away from politics—but not from service. In Dapitan, he becomes a teacher, a doctor, and a community leader.",
-          "bgImage": "assets/bg/rizal_dapitan.png"
+          "bgImage": "assets/bg/Rizal/rizal_dapitan.png"
         },
         {
           "speakerName": "PLAYER: José Rizal",
           "text": "If I cannot fight through politics, I will serve through action. Education, medicine, and compassion—these too are forms of reform.",
-          "bgImage": "assets/bg/rizal_dapitan.png"
+          "bgImage": "assets/bg/Rizal/rizal_dapitan.png"
         },
         {
           "speakerName": "NARRATOR",
           "text": "Even in isolation, Rizal continues to shape the future of his people.",
-          "bgImage": "assets/bg/rizal_dapitan.png"
+          "bgImage": "assets/bg/Rizal/rizal_dapitan.png"
         }
       ]
     },
@@ -109,17 +109,17 @@
         {
           "speakerName": "NARRATOR",
           "text": "While Rizal remains in exile, a new movement begins to rise—one that no longer believes reform is enough.",
-          "bgImage": "assets/bg/forming_katip.png"
+          "bgImage": "assets/bg/Rizal/forming_katip.png"
         },
         {
           "speakerName": "NPC: Andrés Bonifacio",
           "text": "The time for waiting is over. If freedom is denied, then it must be fought for.",
-          "bgImage": "assets/bg/forming_katip.png"
+          "bgImage": "assets/bg/Rizal/forming_katip.png"
         },
         {
           "speakerName": "NARRATOR",
           "text": "Groups like the Katipunan draw inspiration from Rizal’s writings—but take a different path, one that leads toward revolution.",
-          "bgImage": "assets/bg/forming_katip.png"
+          "bgImage": "assets/bg/Rizal/forming_katip.png"
         }
       ]
     },
@@ -130,12 +130,12 @@
         {
           "speakerName": "NARRATOR",
           "text": "As events unfold beyond his reach, Rizal faces the reality that his ideas have taken on a life of their own.",
-          "bgImage": "assets/bg/rizal_dapitan.png"
+          "bgImage": "assets/bg/Rizal/rizal_dapitan.png"
         },
         {
           "speakerName": "PLAYER: José Rizal",
           "text": "(internal monologue): I sought reform, not revolution… yet my words have awakened a nation. What path will they ultimately choose?",
-          "bgImage": "assets/bg/rizal_dapitan.png",
+          "bgImage": "assets/bg/Rizal/rizal_dapitan.png",
           "choices": [
             {
               "text": "Remain committed to peaceful reform and education.",
@@ -156,7 +156,7 @@
         {
           "speakerName": "NARRATOR",
           "text": "Though separated from the center of power, Rizal’s influence continues to spread. His ideas live on in the minds of Filipinos—guiding, inspiring, and dividing them on the question of how to achieve freedom.",
-          "bgImage": "assets/bg/dapitan_sunset.png"
+          "bgImage": "assets/bg/Rizal/dapitan_sunset.png"
         }
       ]
     }

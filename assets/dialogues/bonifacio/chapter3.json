@@ -1,0 +1,91 @@
+{
+  "chapterId": "bonifacio_chapter3",
+  "title": "The Ideals of the Katipunan",
+  "scenes": [
+    {
+      "id": "scene_principles",
+      "name": "The Katipunan's Principles",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Beyond the fight for independence, the Katipunan, under Bonifacio's guidance, was built on a foundation of specific ideals and principles aimed at forging a new Filipino identity.",
+          "bgImage": "assets/bg/Bonifacio/forming_katip.png"
+        },
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "We are the Anak ng Bayan – the Children of the Nation. We join not just to fight, but to build a society based on equality, justice, and love for our homeland.",
+          "bgImage": "assets/bg/Bonifacio/forming_katip.png"
+        },
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "Remember the teachings: 'Love your country after God.' 'Banish from your thoughts all selfishness; think only of the common good.'",
+          "bgImage": "assets/bg/Bonifacio/forming_katip.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_education",
+      "name": "Education and Enlightenment",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Bonifacio believed that true liberation involved not just political freedom, but also the enlightenment of the masses. He emphasized education as a crucial tool for empowerment.",
+          "bgImage": "assets/bg/Bonifacio/boni_pamphlets.png"
+        },
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "Knowledge is our shield against deception. Learn to read, learn to think. Understand why we fight, and what kind of nation we wish to build. A free mind is the first step to a free Philippines.",
+          "bgImage": "assets/bg/Bonifacio/boni_pamphlets.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_brotherhood",
+      "name": "Brotherhood and Mutual Aid",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "The Katipunan fostered a strong sense of brotherhood and mutual support, ensuring that members looked after one another in times of hardship.",
+          "bgImage": "assets/bg/Bonifacio/katip_welfare.png"
+        },
+        {
+          "speakerName": "NPC: Pio Valenzuela",
+          "text": "Supremo, the way our brothers help each other… it shows the strength of our unity. This is more than just a revolution; it is a movement of true solidarity.",
+          "bgImage": "assets/bg/Bonifacio/katip_welfare.png"
+        },
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "Exactly, Pio. We are a family. We fight together, and we rise or fall together. Our bond is our greatest weapon against those who seek to divide us.",
+          "bgImage": "assets/bg/Bonifacio/katip_welfare.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_vision",
+      "name": "The Vision of a New Nation",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Bonifacio envisioned a Philippines free from colonial rule, where Filipinos governed themselves with justice, equality, and national pride.",
+          "bgImage": "assets/bg/Bonifacio/boni_writing.png"
+        },
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "We fight to break the chains, yes. But we also fight to build something new. A nation where every Filipino is treated with dignity, where our culture is honored, and where our children can grow in freedom and prosperity.",
+          "bgImage": "assets/bg/Bonifacio/boni_writing.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_commitment",
+      "name": "The Unwavering Commitment",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "The ideals of the Katipunan, championed by Bonifacio, were not merely about overthrowing a colonizer, but about establishing a just and sovereign nation. This vision fueled the revolution and inspired generations to come.",
+          "bgImage": "assets/bg/Bonifacio/boni_pondering.png"
+        }
+      ]
+    }
+  ]
+}

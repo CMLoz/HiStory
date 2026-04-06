@@ -1,0 +1,95 @@
+{
+  "chapterId": "bonifacio_chapter4",
+  "title": "The Tejeros Convention and its Aftermath",
+  "scenes": [
+    {
+      "id": "scene_formal_gov",
+      "name": "The Need for a Formal Government",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "As the Philippine Revolution gained momentum, the need for a more organized and unified leadership became apparent. The Katipunan, while effective in its initial stages, needed to transition into a formal government to manage the war effort and establish legitimacy.",
+          "bgImage": "assets/bg/Bonifacio/tensions_revolutionary.png"
+        },
+        {
+          "speakerName": "NPC: Emilio Aguinaldo",
+          "text": "Supremo, our victories in Cavite are significant, but we are fighting on multiple fronts. We need a cohesive structure, a government that can direct our resources and command respect, both internally and from potential allies.",
+          "bgImage": "assets/bg/Bonifacio/tensions_revolutionary.png"
+        },
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "I agree. The Katipunan has served its purpose in awakening the people. Now, we must establish a government that will lead us to true independence.",
+          "bgImage": "assets/bg/Bonifacio/tensions_revolutionary.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_tejeros",
+      "name": "The Tejeros Convention",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "The Tejeros Convention was convened in March 1897 with the aim of forming a revolutionary government. However, the proceedings quickly became contentious, particularly regarding the election of officers.",
+          "bgImage": "assets/bg/Bonifacio/tejeros_convention.png"
+        },
+        {
+          "speakerName": "NPC: Daniel Tirona",
+          "text": "Bonifacio is not a lawyer. He is not fit to be Director of the Interior. A lawyer should hold this position!",
+          "bgImage": "assets/bg/Bonifacio/tejeros_convention.png"
+        },
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "I was elected by the people! This convention was meant to unite us, not to divide us based on titles! I accepted the position of Director of the Interior, but I will not stand for this insult to my authority and the will of the assembly!",
+          "bgImage": "assets/bg/Bonifacio/tejeros_convention.png"
+        },
+        {
+          "speakerName": "NARRATOR",
+          "text": "Bonifacio, who presided over the elections, was deeply wounded by the challenge to his authority and the disregard for the established votes, especially when he was not elected to the presidency.",
+          "bgImage": "assets/bg/Bonifacio/tejeros_convention.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_disagreement",
+      "name": "Bonifacio's Disagreement and Arrest",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Bonifacio, believing the convention’s decisions were invalid due to the disrespect shown to the elected officials and the questioning of his own position, declared the assembly adjourned and its resolutions void. This act of defiance led to his arrest.",
+          "bgImage": "assets/bg/Bonifacio/tejeros_convention.png"
+        },
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "This convention has been corrupted! The true will of the people has been ignored. I declare these proceedings null and void!",
+          "bgImage": "assets/bg/Bonifacio/tejeros_convention.png"
+        },
+        {
+          "speakerName": "NPC: General Mascardo",
+          "text": "Supremo Bonifacio, you are under arrest for treason against the revolutionary government.",
+          "bgImage": "assets/bg/Bonifacio/tejeros_convention.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_trial",
+      "name": "The Trial and Execution",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Accused of treason and sedition by factions within the newly formed revolutionary government, Bonifacio faced a swift and unjust trial. His pleas of innocence and his contributions to the revolution were largely ignored.",
+          "bgImage": "assets/bg/Bonifacio/boni_brother_tribunal.png"
+        },
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "I have fought for our freedom. I have given my life to this cause. If this is how my service is repaid, then history will judge. I appeal to the people to see the truth.",
+          "bgImage": "assets/bg/Bonifacio/boni_brother_tribunal.png"
+        },
+        {
+          "speakerName": "NARRATOR",
+          "text": "(He and his brother are executed, a tragic end to the Supremo's life.)",
+          "bgImage": "assets/bg/Bonifacio/boni_brother_tribunal.png"
+        }
+      ]
+    }
+  ]
+}

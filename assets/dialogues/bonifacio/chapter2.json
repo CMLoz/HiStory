@@ -1,0 +1,90 @@
+{
+  "chapterId": "bonifacio_chapter2",
+  "title": "The Revolution Ignites",
+  "scenes": [
+    {
+      "id": "scene_revolution_begins",
+      "name": "The Philippine Revolution Begins",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "The tearing of the cedulas marked the beginning of open rebellion. The Katipunan, under Bonifacio's leadership, launched attacks against Spanish garrisons.",
+          "bgImage": "assets/bg/Bonifacio/kkk_revolt.png"
+        },
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "We fight not for conquest, but for liberation! For our rights, for our homeland! Let every blow struck be a testament to our will!",
+          "bgImage": "assets/bg/Bonifacio/kkk_revolt.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_leadership_strategy",
+      "name": "Leadership and Strategy",
+      "dialogues": [
+        {
+          "speakerName": "NPC: Emilio Aguinaldo",
+          "text": "The forces in Cavite are strong, Supremo. We have had successes, but the Spanish are regrouping.",
+          "bgImage": "assets/bg/Bonifacio/tensions_revolutionary.png"
+        },
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "We must coordinate our efforts. The revolution must be a unified force, not scattered pockets of resistance. Every victory, no matter how small, fuels the spirit of our people.",
+          "bgImage": "assets/bg/Bonifacio/tensions_revolutionary.png"
+        },
+        {
+          "speakerName": "NARRATOR",
+          "text": "Bonifacio, as the Supremo of the Katipunan, worked tirelessly to unite the various revolutionary groups, facing internal challenges and the constant pressure of the Spanish military.",
+          "bgImage": "assets/bg/Bonifacio/tensions_revolutionary.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_tejeros",
+      "name": "Internal Strife and the Tejeros Convention",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "As the revolution gained momentum, internal divisions began to surface. The Tejeros Convention was called to establish a formal government, but it led to a painful schism.",
+          "bgImage": "assets/bg/Bonifacio/tension_reformists.png"
+        },
+        {
+          "speakerName": "NPC: Daniel Tirona",
+          "text": "Bonifacio is not a lawyer. He is not fit to be Director of the Interior. A lawyer should hold this position!",
+          "bgImage": "assets/bg/Bonifacio/tension_reformists.png"
+        },
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "I was elected by the people! This convention was meant to unite us, not to divide us based on titles!",
+          "bgImage": "assets/bg/Bonifacio/tension_reformists.png"
+        },
+        {
+          "speakerName": "NARRATOR",
+          "text": "Despite his efforts, Bonifacio's authority was undermined, leading to his controversial arrest and subsequent execution.",
+          "bgImage": "assets/bg/Bonifacio/tension_reformists.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_betrayal",
+      "name": "The Betrayal and Execution",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Accused of treason and sedition by factions within the revolutionary government, Bonifacio faced a swift and unjust trial.",
+          "bgImage": "assets/bg/Bonifacio/boni_brother_tribunal.png"
+        },
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "I have fought for our freedom. I have given my life to this cause. If this is how my service is repaid, then history will judge.",
+          "bgImage": "assets/bg/Bonifacio/boni_brother_tribunal.png"
+        },
+        {
+          "speakerName": " ",
+          "text": "(He is executed, a tragic end to a pivotal leader.)",
+          "bgImage": "assets/bg/Bonifacio/boni_brother_tribunal.png"
+        }
+      ]
+    }
+  ]
+}

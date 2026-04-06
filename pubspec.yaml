@@ -68,7 +68,11 @@ flutter:
     - assets/audio/
     - assets/dialogues/
     - assets/dialogues/rizal/
-    - assets/bg/
+    - assets/dialogues/bonifacio/
+    - assets/dialogues/luna/
+    - assets/bg/Rizal/
+    - assets/bg/Bonifacio/
+    - assets/bg/Luna/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

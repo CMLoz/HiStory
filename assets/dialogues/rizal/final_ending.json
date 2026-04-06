@@ -9,32 +9,32 @@
         {
           "speakerName": "NARRATOR",
           "text": "From a young student in Europe to a voice that awakened a nation, José Rizal’s journey is one of courage, intellect, and sacrifice.",
-          "bgImage": "assets/bg/dormroom.png"
+          "bgImage": "assets/bg/Rizal/dormroom.png"
         },
         {
           "speakerName": "NARRATOR",
           "text": "Through his novels, essays, and actions, he revealed the truth about colonial injustice.",
-          "bgImage": "assets/bg/printing_press.png"
+          "bgImage": "assets/bg/Rizal/printing_press.png"
         },
         {
           "speakerName": "NARRATOR",
           "text": "He believed in reform through reason, education, and unity.",
-          "bgImage": "assets/bg/rizal_booksarticles.png"
+          "bgImage": "assets/bg/Rizal/rizal_booksarticles.png"
         },
         {
           "speakerName": "NARRATOR",
           "text": "Yet history is shaped not only by ideas—but by how people act upon them.",
-          "bgImage": "assets/bg/manila_harbor.png"
+          "bgImage": "assets/bg/Rizal/manila_harbor.png"
         },
         {
           "speakerName": "NARRATOR",
           "text": "Some followed his path of peaceful reform. Others, inspired by the same ideas, chose revolution.",
-          "bgImage": "assets/bg/two_sides.png"
+          "bgImage": "assets/bg/Rizal/two_sides.png"
         },
         {
           "speakerName": "NARRATOR",
           "text": "His legacy remains a guiding light for the Filipino people—a reminder that the pursuit of truth and freedom is a journey that never truly ends.",
-          "bgImage": "assets/bg/rizal_overlooking.png"
+          "bgImage": "assets/bg/Rizal/rizal_overlooking.png"
         }
       ]
     }

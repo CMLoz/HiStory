@@ -1,0 +1,110 @@
+{
+  "chapterId": "bonifacio_chapter1",
+  "title": "The Spark of Rebellion",
+  "scenes": [
+    {
+      "id": "scene_tondo",
+      "name": "Tondo, Manila, Late 1880s",
+      "dialogues": [
+        {
+          "speakerName": "",
+          "text": "...",
+          "bgImage": "assets/bg/Bonifacio/tondo_rizal.png"
+        },
+        {
+          "speakerName": "NPC: Teodoro Plata",
+          "text": "Andrés, the Spanish continue to exploit us. The taxes are crushing, and justice is a privilege for the wealthy, not a right for the common man. How long can we endure this?",
+          "bgImage": "assets/bg/Bonifacio/tondo_rizal.png"
+        },
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "Endure? We must do more than endure, Teodoro. We must resist. Our people suffer in silence, but a fire is building within them. It needs only a spark.",
+          "bgImage": "assets/bg/Bonifacio/tondo_rizal.png"
+        },
+        {
+          "speakerName": "NPC: Teodoro Plata",
+          "text": "But how? We are ordinary men. They have the power, the soldiers.",
+          "bgImage": "assets/bg/Bonifacio/tondo_rizal.png"
+        },
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "Power lies not only in arms, but in unity and a shared will. If we can awaken our countrymen to their own strength, to the injustice they face, then we can forge our own destiny.",
+          "bgImage": "assets/bg/Bonifacio/tondo_rizal.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_secret_meeting",
+      "name": "A Secret Meeting",
+      "dialogues": [
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "We have seen the writings of Rizal, the calls for reform. They are important, they open eyes. But for some, the time for words has passed. We need action. We need a force that will fight for our freedom.",
+          "bgImage": "assets/bg/Bonifacio/forming_katip.png"
+        },
+        {
+          "speakerName": "NPC: Ladislao Diwa",
+          "text": "The Katipunan. A name that signifies our brotherhood, our shared purpose. We will be the seed from which a free Philippines grows.",
+          "bgImage": "assets/bg/Bonifacio/forming_katip.png"
+        },
+        {
+          "speakerName": "NPC: Teodoro Plata",
+          "text": "This path is dangerous, Andrés. The consequences… imprisonment, death.",
+          "bgImage": "assets/bg/Bonifacio/forming_katip.png"
+        },
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "Freedom is never won without sacrifice. If we do not act, our children will inherit the same chains we wear. We must be brave, not for ourselves, but for the generations to come.",
+          "bgImage": "assets/bg/Bonifacio/forming_katip.png"
+        },
+        {
+          "speakerName": " ",
+          "text": "(The men agree, their resolve hardening.)",
+          "bgImage": "assets/bg/Bonifacio/forming_katip.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_early_leadership",
+      "name": "Bonifacio's Early Leadership",
+      "dialogues": [
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "The Katipunan grows. More men, hearing the call, join our ranks. They are tired of being treated as less than human. They yearn for dignity, for a homeland where they are masters of their own fate.",
+          "bgImage": "assets/bg/Bonifacio/bonifacio_life.png"
+        },
+        {
+          "speakerName": "NARRATOR",
+          "text": "Bonifacio, a man of the people, understood their struggles intimately. His charisma and unwavering belief in independence inspired many to join the secret society, the Kataas-taasang, Kagalang-galangang Katipunan ng mga Anak ng Bayan (KKK).",
+          "bgImage": "assets/bg/Bonifacio/bonifacio_life.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_cry_of_pugad_lawin",
+      "name": "The Cry of Pugad Lawin",
+      "dialogues": [
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "Brothers! Is the Philippines truly to remain a colony of Spain? If so, then all here who desire liberty, take out your cedulas and tear them, that we may show the Spaniards that we are no longer willing to be oppressed!",
+          "bgImage": "assets/bg/Bonifacio/pugad_lawin.png"
+        },
+        {
+          "speakerName": " ",
+          "text": "(The crowd erupts, tearing their cedulas.)",
+          "bgImage": "assets/bg/Bonifacio/pugad_lawin.png"
+        },
+        {
+          "speakerName": "PLAYER: Andrés Bonifacio",
+          "text": "Long live the Philippines! Mabuhay ang Kalayaan!",
+          "bgImage": "assets/bg/Bonifacio/pugad_lawin.png"
+        },
+        {
+          "speakerName": " ",
+          "text": "(The cry echoes, a declaration of war and the birth of a revolution.)",
+          "bgImage": "assets/bg/Bonifacio/pugad_lawin.png"
+        }
+      ]
+    }
+  ]
+}
