@@ -66,6 +66,9 @@ flutter:
   assets:
     - assets/images/
     - assets/audio/
+    - assets/sprites/Bonifacio/
+    - assets/sprites/Luna/
+    - assets/sprites/Rizal/
     - assets/dialogues/
     - assets/dialogues/rizal/
     - assets/dialogues/bonifacio/

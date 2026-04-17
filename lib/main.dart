@@ -2,6 +2,7 @@ import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:history/core/dialogue_sprite_assets.dart';
 import 'package:history/ui/screens/main_menu_screen.dart';
 
 Future<void> main() async {
@@ -14,10 +15,7 @@ Future<void> main() async {
   ]);
 
   // Preload audio files so they decode immediately
-  await FlameAudio.audioCache.loadAll([
-    'main-theme.mp3',
-    'button-click.mp3',
-  ]);
+  await FlameAudio.audioCache.loadAll(['main-theme.mp3', 'button-click.mp3']);
 
   runApp(const ProviderScope(child: MyApp()));
 }
@@ -38,19 +36,13 @@ class _MyAppState extends ConsumerState<MyApp> {
       const AssetImage('assets/images/pixel_art_large.png'),
       context,
     );
-    precacheImage(
-      const AssetImage('assets/images/Play Button.png'),
-      context,
-    );
+    precacheImage(const AssetImage('assets/images/Play Button.png'), context);
     precacheImage(
       const AssetImage('assets/images/Options Button.png'),
       context,
     );
-    precacheImage(
-      const AssetImage('assets/images/Quit Button.png'),
-      context,
-    );
-    
+    precacheImage(const AssetImage('assets/images/Quit Button.png'), context);
+
     // Precache character select screen assets
     precacheImage(
       const AssetImage('assets/images/Back Square Button.png'),
@@ -68,6 +60,10 @@ class _MyAppState extends ConsumerState<MyApp> {
       const AssetImage('assets/images/luna_nameplate.png'),
       context,
     );
+
+    for (final assetPath in allDialogueSpriteAssets()) {
+      precacheImage(AssetImage(assetPath), context);
+    }
   }
 
   @override

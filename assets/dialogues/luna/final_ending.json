@@ -1,0 +1,27 @@
+{
+  "chapterId": "luna_final_ending",
+  "title": "The Price of Disunity",
+  "scenes": [
+    {
+      "id": "scene_ending",
+      "name": "Reflection on Luna's Legacy",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Antonio Luna's story is one of unwavering conviction in the face of impossible circumstances. A military strategist of exceptional talent, he sought to forge a disciplined army capable of standing against the American forces. Yet his uncompromising nature and rigid command style created friction with other leaders who valued political loyalty over military efficiency.",
+          "bgImage": "assets/bg/Luna/american_artillery.png"
+        },
+        {
+          "speakerName": "NARRATOR",
+          "text": "Summoned to Cabanatuan under the guise of meeting with President Aguinaldo, Luna walked into a trap set by rival officers and factions threatened by his power and influence. His assassination by fellow Filipinos during the Philippine-American War remains a turning point in the conflict, symbolizing the internal divisions that weakened the nationalist cause.",
+          "bgImage": "assets/bg/Luna/american_artillery.png"
+        },
+        {
+          "speakerName": "NARRATOR",
+          "text": "Luna's legacy reminds us that while individual brilliance and dedication are vital, they cannot overcome the fractures of unity. His death marked the loss of military leadership precisely when the Filipino forces needed it most, demonstrating that national independence requires not just military strength, but also political cohesion and mutual trust among leaders.",
+          "bgImage": "assets/bg/Luna/american_artillery.png"
+        }
+      ]
+    }
+  ]
+}

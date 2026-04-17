@@ -80,6 +80,10 @@ class AudioController extends Notifier<AudioSettings> {
       FlameAudio.bgm.play('main-theme.mp3', volume: state.bgmVolume);
     }
   }
+
+  void stopBgm() {
+    FlameAudio.bgm.stop();
+  }
 }
 
 final audioControllerProvider =

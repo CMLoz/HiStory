@@ -143,7 +143,7 @@
             },
             {
               "text": "Support the growing call for stronger resistance.",
-              "nextIndex": 19
+              "nextIndex": 20
             }
           ]
         }
@@ -157,6 +157,22 @@
           "speakerName": "NARRATOR",
           "text": "Though separated from the center of power, Rizal’s influence continues to spread. His ideas live on in the minds of Filipinos—guiding, inspiring, and dividing them on the question of how to achieve freedom.",
           "bgImage": "assets/bg/Rizal/dapitan_sunset.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_result_stronger_resistance",
+      "name": "Result: Stronger Resistance",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "If Jose Rizal had suddenly called for radical revolution during the height of his writings, the impact of Noli Me Tangere would have taken a far more dangerous turn. Spanish authorities would have seen him not just as a reformist voice, but as an open enemy of the state, likely leading to his arrest or execution much earlier than in real history.",
+          "bgImage": "__BLACKOUT__"
+        },
+        {
+          "speakerName": "NARRATOR",
+          "text": "Among Filipinos, the reaction would have been divided. Some reformists would have been shocked by his shift, while revolutionaries, including those in the Katipunan, would have been inspired and strengthened. The movement for independence might have accelerated, but at the cost of unity, as Rizal's influence would no longer be rooted in peaceful reform.",
+          "bgImage": "__BLACKOUT__"
         }
       ]
     }

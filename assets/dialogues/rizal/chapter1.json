@@ -144,7 +144,7 @@
             },
             {
               "text": "Remain a quiet student",
-              "nextIndex": 28
+              "nextIndex": 30
             }
           ]
         }
@@ -189,6 +189,38 @@
           "speakerName": "PLAYER: José Rizal",
           "text": "My life is no longer mine alone. It belongs to the Philippines—the nation that suffers, hopes, and will one day rise.",
           "bgImage": "assets/bg/Rizal/dawn_office.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_result_stay_philippines",
+      "name": "Result: Stay in the Philippines",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Jose Rizal chose to stay in the Philippines instead of leaving for Spain. Without seeing Europe's ideas of reform and freedom, he remained a skilled doctor and writer, known mostly in his hometown rather than across the nation.",
+          "bgImage": "__BLACKOUT__"
+        },
+        {
+          "speakerName": "NARRATOR",
+          "text": "Without his powerful novels and influence, the fight for reform grew much slower. Many Filipinos were not awakened as early to the abuses happening under Spanish rule. The Propaganda Movement lost one of its brightest voices, and the ideas of change spread less quickly. People still hoped for freedom, but without Rizal's words to inspire courage and unity, the path to independence became longer, harder, and far more uncertain.",
+          "bgImage": "__BLACKOUT__"
+        }
+      ]
+    },
+    {
+      "id": "scene_result_quiet_student",
+      "name": "Result: Remain a Quiet Student",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Instead of joining the school reform movement in Spain, Jose Rizal chose to focus only on his studies and personal career. He became an excellent doctor and scholar, but he stayed distant from the growing voices of Filipino reformists fighting for change.",
+          "bgImage": "__BLACKOUT__"
+        },
+        {
+          "speakerName": "NARRATOR",
+          "text": "Without his active role in the movement, the call for equality and justice for Filipinos became weaker. The reform campaign lost one of its brightest minds, and fewer people were inspired by his leadership and writings. Change still came, but it arrived more slowly and with greater struggle.",
+          "bgImage": "__BLACKOUT__"
         }
       ]
     }

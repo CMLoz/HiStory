@@ -105,7 +105,7 @@
             },
             {
               "text": "Delay publication.",
-              "nextIndex": 15
+              "nextIndex": 24
             }
           ]
         }
@@ -171,6 +171,22 @@
           "speakerName": "PLAYER: José Rizal",
           "text": "(He closes his eyes for a moment, a deep breath filling his lungs.) “My path is clear, and my resolve is firm. For the Philippines.”",
           "bgImage": "assets/bg/Rizal/rizal_nightview.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_result_delay_publication",
+      "name": "Result: Delay Publication",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "If Jose Rizal had written Noli Me Tangere but delayed its publication, the spark of awakening among Filipinos might have come much later. Without the novel reaching the public in 1887, fewer people would have immediately seen the harsh abuses of the Spanish friars and colonial officials. Rizal may have spent more time revising the book, but the reform movement would have lost valuable momentum during those critical years.",
+          "bgImage": "__BLACKOUT__"
+        },
+        {
+          "speakerName": "NARRATOR",
+          "text": "As a result, the growing sense of nationalism in the Philippines could have slowed down. Reformists and young ilustrados might have lacked the strong inspiration that Noli provided, and the call for change would have been quieter for a time. When the book was finally released, it would still have made an impact, but perhaps not as powerfully, since the perfect moment to ignite public outrage had already begun to pass.",
+          "bgImage": "__BLACKOUT__"
         }
       ]
     }

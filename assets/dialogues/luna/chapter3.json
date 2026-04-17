@@ -1,0 +1,32 @@
+{
+  "chapterId": "luna_chapter3",
+  "title": "The Summons to Cabanatuan",
+  "scenes": [
+    {
+      "id": "scene_headquarters",
+      "name": "Luna's Headquarters, Receiving a Telegram",
+      "dialogues": [
+        {
+          "speakerName": "NPC: Aide",
+          "text": "General Luna! A telegram, ordered by the President. It summons you to Cabanatuan to meet with Aguinaldo and discuss urgent military matters.",
+          "bgImage": "assets/bg/Luna/luna_maps_rushing.png"
+        },
+        {
+          "speakerName": "PLAYER: Antonio Luna",
+          "text": "Cabanatuan? And urgent military matters? Hmm. The timing is suspicious, and the location odd. What do you think, Aide? Why there, why now?",
+          "bgImage": "assets/bg/Luna/luna_maps_rushing.png"
+        },
+        {
+          "speakerName": "NPC: Aide",
+          "text": "Sir, given the current tension with other officers, I would urge caution.",
+          "bgImage": "assets/bg/Luna/luna_maps_rushing.png"
+        },
+        {
+          "speakerName": "PLAYER: Antonio Luna",
+          "text": "Though suspicious, I understand the importance of unity. I will go. If we are to win this war, we must present a united front. Prepare a small escort only. Leave the rest of the troops here.",
+          "bgImage": "assets/bg/Luna/luna_maps_rushing.png"
+        }
+      ]
+    }
+  ]
+}

@@ -154,11 +154,11 @@
           "choices": [
             {
               "text": "Emphasize that the novel is a warning to prevent revolution.",
-              "nextIndex": 23
+              "nextIndex": 22
             },
             {
               "text": "Distance from the novel’s more radical implications.",
-              "nextIndex": 23
+              "nextIndex": 24
             }
           ]
         }
@@ -177,6 +177,22 @@
           "speakerName": "PLAYER: José Rizal",
           "text": "(internal monologue): If injustice continues, the future will not be decided by words alone… but by the actions of those who have awakened.",
           "bgImage": "assets/bg/Rizal/rizal_overlooking.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_result_distance_implications",
+      "name": "Result: Distance from Radical Implications",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "As copies of Noli Me Tangere and El Filibusterismo spread, many asked Jose Rizal if it was a call for revolution. Some saw its truths as a spark for rebellion, while others feared it would anger Spanish authorities. Rizal chose to distance himself from the novel's radical meaning, explaining that he wrote it not to promote violence, but to expose society's problems and encourage peaceful reform.",
+          "bgImage": "__BLACKOUT__"
+        },
+        {
+          "speakerName": "NARRATOR",
+          "text": "His words reassured reformists who still believed change could happen through justice and education. However, others were disappointed, feeling Rizal had softened his own message. Revolutionaries saw hesitation, while Spanish officials grew less suspicious. Though he remained a symbol of awakening, his choice divided those who wanted reform and those who believed only revolution could bring freedom.",
+          "bgImage": "__BLACKOUT__"
         }
       ]
     }

@@ -167,11 +167,11 @@
             },
             {
               "text": "Distance myself from political leadership and focus on education and personal works.",
-              "nextIndex": 25
+              "nextIndex": 27
             },
             {
               "text": "Return to the Philippines to witness conditions firsthand.",
-              "nextIndex": 25
+              "nextIndex": 29
             }
           ]
         }
@@ -190,6 +190,38 @@
           "speakerName": "PLAYER: José Rizal",
           "text": "(internal monologue) The struggle for reform is far from over. But as long as minds continue to awaken, there is hope for the future.",
           "bgImage": "assets/bg/Rizal/rizal_booksarticles.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_result_distance_leadership",
+      "name": "Result: Distance from Political Leadership",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "As Noli Me Tangere spread across the Philippines, its words stirred the hearts of many Filipinos. People whispered about its truths, and young reformists looked to Jose Rizal as a symbol of hope. But instead of stepping forward, Rizal slowly pulled himself away from the reform movement. He avoided public involvement, choosing silence over speeches and distance over leadership, leaving many confused by his sudden withdrawal.",
+          "bgImage": "__BLACKOUT__"
+        },
+        {
+          "speakerName": "NARRATOR",
+          "text": "Without Rizal's strong presence, the reform movement began to lose some of its fire. Supporters who once believed in peaceful change started to doubt if reforms could still be achieved. Others turned their anger into stronger calls for revolution. While leaders like Marcelo H. del Pilar continued the fight, Rizal's absence created a silence that was deeply felt, and the path of Philippine nationalism began to shift in a different direction.",
+          "bgImage": "__BLACKOUT__"
+        }
+      ]
+    },
+    {
+      "id": "scene_result_return_philippines",
+      "name": "Result: Return to the Philippines",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "As Noli Me Tangere spread and stirred controversy, Jose Rizal returned to the Philippines. His arrival quickly drew the attention of Spanish authorities, who already saw him as a threat because of his novel. He was closely watched, and his movements became a source of concern for officials.",
+          "bgImage": "__BLACKOUT__"
+        },
+        {
+          "speakerName": "NARRATOR",
+          "text": "Among Filipinos, however, his return brought hope. Reformists saw him as the voice behind the ideas that challenged injustice, and many looked to him for guidance. But his presence also heightened tensions, as authorities grew more suspicious and careful. His return strengthened the reform movement, but also made his situation far more dangerous.",
+          "bgImage": "__BLACKOUT__"
         }
       ]
     }

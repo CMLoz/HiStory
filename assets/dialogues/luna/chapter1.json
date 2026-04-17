@@ -1,0 +1,58 @@
+{
+  "chapterId": "luna_chapter1",
+  "title": "The Brilliant but Feared General",
+  "scenes": [
+    {
+      "id": "scene_military_camp",
+      "name": "Military Camp, Philippine-American War",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Antonio Luna rises as one of the most disciplined and strategic leaders of the Filipino army under Emilio Aguinaldo. He enforces strict military rules, demanding order and professionalism among soldiers who were used to less rigid command.",
+          "bgImage": "assets/bg/Luna/tired_soldiers.png"
+        },
+        {
+          "speakerName": "PLAYER: Antonio Luna",
+          "text": "Your ranks are sloppy! Your uniforms are a disgrace! We are fighting the Americans, not running a marketplace! I demand order and professionalism, or you will be useless against the enemy!",
+          "bgImage": "assets/bg/Luna/tired_soldiers.png"
+        },
+        {
+          "speakerName": "NPC: Soldier",
+          "text": "General, we are volunteers, not professional soldiers. Your commands are too rigid.",
+          "bgImage": "assets/bg/Luna/tired_soldiers.png"
+        },
+        {
+          "speakerName": "PLAYER: Antonio Luna",
+          "text": "War is rigid! We will establish defensive strategies, trench systems, and fight like an army, not a mob! Discipline is the only thing that will save us!",
+          "bgImage": "assets/bg/Luna/tired_soldiers.png"
+        },
+        {
+          "speakerName": " ",
+          "text": "(The soldier flinches and straightens up. Resentment is palpable.)",
+          "bgImage": "assets/bg/Luna/tired_soldiers.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_strategy_meeting",
+      "name": "Command Tent, Strategy Meeting",
+      "dialogues": [
+        {
+          "speakerName": "NPC: Emilio Aguinaldo",
+          "text": "General Luna, your defensive strategies, especially the trench systems, show great strategic value in resisting American forces. However, your harsh methods and quick temper are creating tension among fellow officers and soldiers.",
+          "bgImage": "assets/bg/Luna/meeting_maps.png"
+        },
+        {
+          "speakerName": "PLAYER: Antonio Luna",
+          "text": "Mr. President, my methods ensure survival and success. Despite their resentment, the army is more effective because of my discipline. We must prioritize strategy and order over comfort.",
+          "bgImage": "assets/bg/Luna/meeting_maps.png"
+        },
+        {
+          "speakerName": "NPC: Emilio Aguinaldo",
+          "text": "Yet, resentment toward you quietly grows within the ranks. I caution you—disunity is a greater risk than any American bullet.",
+          "bgImage": "assets/bg/Luna/meeting_maps.png"
+        }
+      ]
+    }
+  ]
+}

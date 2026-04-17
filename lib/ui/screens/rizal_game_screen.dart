@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:history/core/dialogue_sprite_assets.dart';
 import 'package:history/providers/game_state.dart';
 import 'package:history/providers/settings_provider.dart';
 import 'package:history/ui/theme/game_theme.dart';
+import 'package:history/ui/theme/responsive.dart';
 import 'package:history/ui/widgets/audio_image_button.dart';
+import 'package:history/ui/widgets/dialogue_sprite_overlay.dart';
 import 'package:history/ui/widgets/typewriter_text.dart';
 import 'package:history/ui/screens/main_menu_screen.dart';
 import 'package:history/ui/screens/options_screen.dart';
@@ -18,6 +21,8 @@ class RizalGameScreen extends ConsumerStatefulWidget {
 }
 
 class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
+  static const String _blackoutBgToken = '__BLACKOUT__';
+
   // Game Screen Opacity (for scene transitions)
   double _opacity = 0.0;
   Duration _opacityDuration = const Duration(seconds: 2);
@@ -32,6 +37,7 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
   // Chapter Title Screen State
   bool _showChapterTitle = true; // Start with title screen by default
   double _titleOpacity = 0.0;
+  int? _lastResultSfxIndex;
 
   final GlobalKey<TypewriterTextState> _typewriterKey =
       GlobalKey<TypewriterTextState>();
@@ -48,6 +54,9 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
   Future<void> _preloadStaticAssets() async {
     final audioController = ref.read(audioControllerProvider.notifier);
     await Future.wait<void>([
+      ...dialogueSpriteAssetsForStory(
+        rizalStoryKey,
+      ).map((assetPath) => precacheImage(AssetImage(assetPath), context)),
       precacheImage(
         const AssetImage('assets/images/dialogue_box.png'),
         context,
@@ -56,8 +65,43 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
         const AssetImage('assets/images/Pause Square Button.png'),
         context,
       ),
+      precacheImage(
+        const AssetImage('assets/images/Home Square Button.png'),
+        context,
+      ),
+      precacheImage(
+        const AssetImage('assets/images/Settings Square Button.png'),
+        context,
+      ),
+      precacheImage(
+        const AssetImage('assets/images/Return Square Button.png'),
+        context,
+      ),
+      precacheImage(
+        const AssetImage('assets/images/Back Square Button.png'),
+        context,
+      ),
       audioController.preloadSfx(['button-click.mp3']),
     ]);
+  }
+
+  bool _isResultNode(DialogueNode node) {
+    return (node.sceneId ?? '').startsWith('scene_result_');
+  }
+
+  bool _isBlackoutNode(DialogueNode node) {
+    return node.bgImage == _blackoutBgToken;
+  }
+
+  void _triggerResultSfx(DialogueNode node) {
+    if (!_isResultNode(node) || _displayIndex == null) {
+      return;
+    }
+    if (_lastResultSfxIndex == _displayIndex) {
+      return;
+    }
+    ref.read(audioControllerProvider.notifier).playSfx('button-click.mp3');
+    _lastResultSfxIndex = _displayIndex;
   }
 
   void _preloadSceneAssets(Chapter chapter) {
@@ -65,7 +109,7 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
 
     final uniqueImages = chapter.nodes.map((n) => n.bgImage).toSet();
     for (var imgPath in uniqueImages) {
-      if (imgPath.isNotEmpty && mounted) {
+      if (imgPath.isNotEmpty && imgPath != _blackoutBgToken && mounted) {
         precacheImage(AssetImage(imgPath), context);
       }
     }
@@ -133,6 +177,12 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
               ? prevNode.sceneId != nextNode.sceneId
               : prevNode.bgImage != nextNode.bgImage;
 
+          final bool enteringResult =
+              !_isResultNode(prevNode) && _isResultNode(nextNode);
+          if (enteringResult) {
+            ref.read(audioControllerProvider.notifier).stopBgm();
+          }
+
           if (sceneChanged) {
             // Scene Transition: Fade Out -> Update -> Fade In
             setState(() {
@@ -180,6 +230,7 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
           _opacity = 0.0;
           _displayIndex = 0; // Reset index for new chapter
           _sceneAssetsLoaded = false; // Trigger asset reload
+          _lastResultSfxIndex = null;
         });
 
         gameNotifier
@@ -243,6 +294,12 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
           }
 
           final DialogueNode currentNode = nodes[_displayIndex!];
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (mounted) {
+              _triggerResultSfx(currentNode);
+            }
+          });
+
           final bool isChoice = currentNode.isChoice;
           final bool isLastNode = _displayIndex == nodes.length - 1;
 
@@ -263,12 +320,14 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
 
                         Future.delayed(const Duration(milliseconds: 1500), () {
                           if (mounted) {
-                            if (currentChapterId == 'final_ending') {
+                            if (currentChapterId == 'final_ending' ||
+                                _isResultNode(currentNode)) {
                               // Game finished: Return to menu
                               Navigator.of(context).pushAndRemoveUntil(
                                 PageRouteBuilder(
-                                  transitionDuration:
-                                      const Duration(seconds: 2),
+                                  transitionDuration: const Duration(
+                                    seconds: 2,
+                                  ),
                                   pageBuilder:
                                       (
                                         context,
@@ -313,13 +372,20 @@ class _RizalGameScreenState extends ConsumerState<RizalGameScreen> {
                   // Background Image
                   Positioned.fill(
                     child: RepaintBoundary(
-                      child: Image.asset(
-                        currentNode.bgImage,
-                        key: ValueKey<String>(currentNode.bgImage),
-                        fit: BoxFit.cover,
-                        gaplessPlayback: true,
-                      ),
+                      child: _isBlackoutNode(currentNode)
+                          ? Container(color: Colors.black)
+                          : Image.asset(
+                              currentNode.bgImage,
+                              key: ValueKey<String>(currentNode.bgImage),
+                              fit: BoxFit.cover,
+                              gaplessPlayback: true,
+                            ),
                     ),
+                  ),
+
+                  DialogueSpriteOverlay(
+                    storyKey: rizalStoryKey,
+                    speakerName: currentNode.speakerName,
                   ),
 
                   // — CHOICE UI —
@@ -477,10 +543,9 @@ class _ChapterTitleScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final String chapterId = ref.watch(currentChapterProvider);
-    final String chapterLabel =
-        chapterId == 'final_ending'
-            ? 'FINAL EPILOGUE'
-            : chapterId.replaceAll('chapter', 'CHAPTER ');
+    final String chapterLabel = chapterId == 'final_ending'
+        ? 'FINAL EPILOGUE'
+        : chapterId.replaceAll('chapter', 'CHAPTER ');
 
     return Container(
       color: Colors.black,
@@ -536,6 +601,15 @@ class _DialogueBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    // Dynamic height: fixed for mobile, scaled for tablet/web
+    final dialogueHeight = ResponsiveConstraints.getDialogueBoxHeight(
+      screenWidth,
+      screenHeight,
+    );
+
     return Align(
       alignment: Alignment.bottomCenter,
       child: Padding(
@@ -547,12 +621,12 @@ class _DialogueBox extends StatelessWidget {
               Image.asset(
                 'assets/images/dialogue_box.png',
                 width: MediaQuery.of(context).size.width * 0.95,
-                height: 200,
+                height: dialogueHeight,
                 fit: BoxFit.fill,
               ),
               Positioned(
                 top: 40,
-                left: 70,
+                left: 130,
                 right: 100,
                 bottom: 40,
                 child: Column(
@@ -573,6 +647,8 @@ class _DialogueBox extends StatelessWidget {
                               ),
                             ],
                           ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                     Expanded(
@@ -649,6 +725,8 @@ class _ChoiceBoxState extends State<_ChoiceBox> {
                 child: Text(
                   widget.choice.text,
                   textAlign: TextAlign.center,
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
                   style: GameTheme.bodyStyle.copyWith(
                     fontSize: 14,
                     color: Colors.white,

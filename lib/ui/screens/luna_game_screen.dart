@@ -13,15 +13,14 @@ import 'package:history/ui/screens/options_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:history/core/audio/audio_controller.dart';
 
-class BonifacioGameScreen extends ConsumerStatefulWidget {
-  const BonifacioGameScreen({super.key});
+class LunaGameScreen extends ConsumerStatefulWidget {
+  const LunaGameScreen({super.key});
 
   @override
-  ConsumerState<BonifacioGameScreen> createState() =>
-      _BonifacioGameScreenState();
+  ConsumerState<LunaGameScreen> createState() => _LunaGameScreenState();
 }
 
-class _BonifacioGameScreenState extends ConsumerState<BonifacioGameScreen> {
+class _LunaGameScreenState extends ConsumerState<LunaGameScreen> {
   // Game Screen Opacity (for scene transitions)
   double _opacity = 0.0;
   Duration _opacityDuration = const Duration(seconds: 2);
@@ -53,7 +52,7 @@ class _BonifacioGameScreenState extends ConsumerState<BonifacioGameScreen> {
     final audioController = ref.read(audioControllerProvider.notifier);
     await Future.wait<void>([
       ...dialogueSpriteAssetsForStory(
-        bonifacioStoryKey,
+        lunaStoryKey,
       ).map((assetPath) => precacheImage(AssetImage(assetPath), context)),
       precacheImage(
         const AssetImage('assets/images/dialogue_box.png'),
@@ -132,16 +131,16 @@ class _BonifacioGameScreenState extends ConsumerState<BonifacioGameScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final asyncChapter = ref.watch(bonifacioDialogueNodesProvider);
-    final BonifacioGameStateNotifier gameNotifier = ref.read(
-      bonifacioGameStateProvider.notifier,
+    final asyncChapter = ref.watch(lunaDialogueNodesProvider);
+    final LunaGameStateNotifier gameNotifier = ref.read(
+      lunaGameStateProvider.notifier,
     );
     final int textSpeedMs = ref.watch(textSpeedProvider);
 
-    final String currentChapterId = ref.watch(bonifacioChapterProvider);
+    final String currentChapterId = ref.watch(lunaChapterProvider);
 
     // Listen to game state changes for scene transitions (intra-chapter)
-    ref.listen<int>(bonifacioGameStateProvider, (previous, next) {
+    ref.listen<int>(lunaGameStateProvider, (previous, next) {
       if (asyncChapter.hasValue && !_showChapterTitle) {
         final nodes = asyncChapter.value!.nodes;
         if (previous != null &&
@@ -190,7 +189,7 @@ class _BonifacioGameScreenState extends ConsumerState<BonifacioGameScreen> {
     });
 
     // Listen for Chapter changes to reset sequence
-    ref.listen(bonifacioDialogueNodesProvider, (prev, next) {
+    ref.listen(lunaDialogueNodesProvider, (prev, next) {
       if (next is AsyncData) {
         setState(() {
           _showChapterTitle = true;
@@ -227,7 +226,7 @@ class _BonifacioGameScreenState extends ConsumerState<BonifacioGameScreen> {
             WidgetsBinding.instance.addPostFrameCallback((_) {
               if (mounted) {
                 setState(() {
-                  _displayIndex = ref.read(bonifacioGameStateProvider);
+                  _displayIndex = ref.read(lunaGameStateProvider);
                 });
                 if (_showChapterTitle) {
                   _startChapterSequence();
@@ -245,7 +244,7 @@ class _BonifacioGameScreenState extends ConsumerState<BonifacioGameScreen> {
 
           // --- CHAPTER TITLE SCREEN ---
           if (_showChapterTitle) {
-            return _BonifacioChapterTitleScreen(
+            return _LunaChapterTitleScreen(
               chapter: chapter,
               opacity: _titleOpacity,
             );
@@ -276,8 +275,8 @@ class _BonifacioGameScreenState extends ConsumerState<BonifacioGameScreen> {
 
                         Future.delayed(const Duration(milliseconds: 1500), () {
                           if (mounted) {
-                            if (currentChapterId == 'chapter5') {
-                              // Last chapter for now: Return to menu
+                            if (currentChapterId == 'final_ending') {
+                              // Last chapter: Return to menu
                               Navigator.of(context).pushAndRemoveUntil(
                                 PageRouteBuilder(
                                   transitionDuration: const Duration(
@@ -307,7 +306,7 @@ class _BonifacioGameScreenState extends ConsumerState<BonifacioGameScreen> {
                             } else {
                               // Proceed to next chapter
                               ref
-                                  .read(bonifacioChapterProvider.notifier)
+                                  .read(lunaChapterProvider.notifier)
                                   .nextChapter();
                             }
                           }
@@ -335,7 +334,7 @@ class _BonifacioGameScreenState extends ConsumerState<BonifacioGameScreen> {
                   ),
 
                   DialogueSpriteOverlay(
-                    storyKey: bonifacioStoryKey,
+                    storyKey: lunaStoryKey,
                     speakerName: currentNode.speakerName,
                   ),
 
@@ -349,7 +348,7 @@ class _BonifacioGameScreenState extends ConsumerState<BonifacioGameScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: currentNode.choices!.map((choice) {
-                            return _BonifacioChoiceBox(
+                            return _LunaChoiceBox(
                               choice: choice,
                               onTap: () =>
                                   gameNotifier.jumpTo(choice.nextIndex),
@@ -360,7 +359,7 @@ class _BonifacioGameScreenState extends ConsumerState<BonifacioGameScreen> {
                     )
                   // — NORMAL DIALOGUE BOX —
                   else
-                    _BonifacioDialogueBox(
+                    _LunaDialogueBox(
                       currentNode: currentNode,
                       typewriterKey: _typewriterKey,
                       textSpeedMs: textSpeedMs,
@@ -448,10 +447,10 @@ class _BonifacioGameScreenState extends ConsumerState<BonifacioGameScreen> {
                                 width: 80,
                                 onPressed: () {
                                   ref
-                                      .read(bonifacioChapterProvider.notifier)
+                                      .read(lunaChapterProvider.notifier)
                                       .reset();
                                   ref
-                                      .read(bonifacioGameStateProvider.notifier)
+                                      .read(lunaGameStateProvider.notifier)
                                       .reset();
                                   setState(() {
                                     _isPaused = false;
@@ -484,19 +483,16 @@ class _BonifacioGameScreenState extends ConsumerState<BonifacioGameScreen> {
   }
 }
 
-/// Chapter title intro screen for Bonifacio.
-class _BonifacioChapterTitleScreen extends ConsumerWidget {
+/// Chapter title intro screen for Luna.
+class _LunaChapterTitleScreen extends ConsumerWidget {
   final Chapter chapter;
   final double opacity;
 
-  const _BonifacioChapterTitleScreen({
-    required this.chapter,
-    required this.opacity,
-  });
+  const _LunaChapterTitleScreen({required this.chapter, required this.opacity});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final String chapterId = ref.watch(bonifacioChapterProvider);
+    final String chapterId = ref.watch(lunaChapterProvider);
     final String chapterLabel = chapterId.replaceAll('chapter', 'CHAPTER ');
 
     return Container(
@@ -540,12 +536,12 @@ class _BonifacioChapterTitleScreen extends ConsumerWidget {
 }
 
 /// The standard dialogue box at the bottom of the screen.
-class _BonifacioDialogueBox extends StatelessWidget {
+class _LunaDialogueBox extends StatelessWidget {
   final DialogueNode currentNode;
   final GlobalKey<TypewriterTextState>? typewriterKey;
   final int textSpeedMs;
 
-  const _BonifacioDialogueBox({
+  const _LunaDialogueBox({
     required this.currentNode,
     required this.typewriterKey,
     required this.textSpeedMs,
@@ -632,17 +628,17 @@ class _BonifacioDialogueBox extends StatelessWidget {
 }
 
 /// A single interactive choice box.
-class _BonifacioChoiceBox extends StatefulWidget {
+class _LunaChoiceBox extends StatefulWidget {
   final ChoiceOption choice;
   final VoidCallback onTap;
 
-  const _BonifacioChoiceBox({required this.choice, required this.onTap});
+  const _LunaChoiceBox({required this.choice, required this.onTap});
 
   @override
-  State<_BonifacioChoiceBox> createState() => _BonifacioChoiceBoxState();
+  State<_LunaChoiceBox> createState() => _LunaChoiceBoxState();
 }
 
-class _BonifacioChoiceBoxState extends State<_BonifacioChoiceBox> {
+class _LunaChoiceBoxState extends State<_LunaChoiceBox> {
   bool _hovered = false;
 
   @override

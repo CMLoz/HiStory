@@ -1,0 +1,22 @@
+{
+  "chapterId": "luna_chapter5",
+  "title": "A Nation Divided",
+  "scenes": [
+    {
+      "id": "scene_final",
+      "name": "Legacy of Division",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Following Luna's assassination, the Filipino army loses one of its most capable leaders. Military coordination weakens, and resistance against American forces becomes less effective. The event deepened divisions within the leadership and damaged morale among soldiers.",
+          "bgImage": "assets/bg/Luna/american_artillery.png"
+        },
+        {
+          "speakerName": "PLAYER: Antonio Luna",
+          "text": "My discipline was meant to forge a nation, not fracture it. My life reflects both courage and the consequences of disunity. The lesson endures: national unity is the price of freedom.",
+          "bgImage": "assets/bg/Luna/american_artillery.png"
+        }
+      ]
+    }
+  ]
+}

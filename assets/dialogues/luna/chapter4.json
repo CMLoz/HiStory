@@ -1,0 +1,78 @@
+{
+  "chapterId": "luna_chapter4",
+  "title": "The Betrayal and Death",
+  "scenes": [
+    {
+      "id": "scene_convent",
+      "name": "Cabanatuan Convent Headquarters, Mid-day",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Upon arrival, Luna finds that Aguinaldo is not present, raising doubts and confusion. The atmosphere feels tense, and Luna senses that something is wrong—but it is already too late.",
+          "bgImage": "assets/bg/Luna/luna_men_courtyard.png"
+        },
+        {
+          "speakerName": "PLAYER: Antonio Luna",
+          "text": "Where is the President? This telegram was urgent. The air here feels wrong.",
+          "bgImage": "assets/bg/Luna/luna_men_courtyard.png"
+        },
+        {
+          "speakerName": " ",
+          "text": "(Luna enters the convent and encounters members of the Kawit Battalion. The Commander approaches.)",
+          "bgImage": "assets/bg/Luna/luna_men_courtyard.png"
+        },
+        {
+          "speakerName": "NPC: Kawit Battalion Commander",
+          "text": "General Luna. The President is not here. We are in charge of the post.",
+          "bgImage": "assets/bg/Luna/luna_men_courtyard.png"
+        },
+        {
+          "speakerName": "PLAYER: Antonio Luna",
+          "text": "In charge? I received a direct summons from Aguinaldo! Where is he, and why are you men of the Kawit Battalion here? You should be fighting the Americans, not idling at headquarters!",
+          "bgImage": "assets/bg/Luna/luna_men_courtyard.png"
+        },
+        {
+          "speakerName": "NPC: Kawit Battalion Commander",
+          "text": "Watch your tone, General. Your orders do not apply here.",
+          "bgImage": "assets/bg/Luna/luna_men_courtyard.png"
+        },
+        {
+          "speakerName": " ",
+          "text": "(A heated confrontation quickly escalates into violence.)",
+          "bgImage": "assets/bg/Luna/luna_men_courtyard.png"
+        }
+      ]
+    },
+    {
+      "id": "scene_assassination",
+      "name": "The Assassination",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "Outnumbered and unprepared, Luna fights back fiercely but is ultimately overwhelmed.",
+          "bgImage": "assets/bg/Luna/luna_betrayal.png"
+        },
+        {
+          "speakerName": "PLAYER: Antonio Luna",
+          "text": "Cowards! You fall upon your own General? Are you truly so blind that you cannot see the real enemy?",
+          "bgImage": "assets/bg/Luna/luna_betrayal.png"
+        },
+        {
+          "speakerName": " ",
+          "text": "(Luna is stabbed and shot repeatedly by his fellow Filipino soldiers. He falls.)",
+          "bgImage": "assets/bg/Luna/luna_betrayal.png"
+        },
+        {
+          "speakerName": "PLAYER: Antonio Luna",
+          "text": "Traitors… not to foreign enemies… but to my own countrymen…",
+          "bgImage": "assets/bg/Luna/luna_betrayal.png"
+        },
+        {
+          "speakerName": "NARRATOR",
+          "text": "His death sends shockwaves through the already fragile army.",
+          "bgImage": "assets/bg/Luna/luna_betrayal.png"
+        }
+      ]
+    }
+  ]
+}

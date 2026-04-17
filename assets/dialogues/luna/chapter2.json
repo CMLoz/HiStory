@@ -1,0 +1,32 @@
+{
+  "chapterId": "luna_chapter2",
+  "title": "Enemies Within",
+  "scenes": [
+    {
+      "id": "scene_officer_quarters",
+      "name": "Officer Quarters, Heated Discussion",
+      "dialogues": [
+        {
+          "speakerName": "NARRATOR",
+          "text": "As the war intensifies, Luna's conflicts with other commanders become more frequent. He openly criticizes incompetence and disobedience, earning both respect and hatred.",
+          "bgImage": "assets/bg/Luna/tense_dim.png"
+        },
+        {
+          "speakerName": "NPC: Rival Officer",
+          "text": "General, your criticism of our command structure is undermining the President's authority! We are patriots, not children to be scolded for every minor disobedience!",
+          "bgImage": "assets/bg/Luna/tense_dim.png"
+        },
+        {
+          "speakerName": "PLAYER: Antonio Luna",
+          "text": "Incompetence and disobedience are crimes in wartime! Political divisions are surfacing within the leadership of the First Philippine Republic because certain officers, particularly those loyal to Aguinaldo, prioritize loyalty over performance!",
+          "bgImage": "assets/bg/Luna/tense_dim.png"
+        },
+        {
+          "speakerName": "NPC: Rival Officer",
+          "text": "The cracks within the Filipino leadership are becoming more dangerous than the enemy outside. If you cannot accept strict command in a time of crisis, you are a part of the problem!",
+          "bgImage": "assets/bg/Luna/tense_dim.png"
+        }
+      ]
+    }
+  ]
+}
